@@ -41,3 +41,21 @@ Ibrahim, A., Vela, F.L.G., Rodríguez, P.P., Sánchez, J.L.G. and Zea, N.P. (201
 **References:**
 
 Royle, K. (2008). Game-based Learning: A Different Perspective. \[online] Available at: https://www.researchgate.net/publication/32117326\_Game-based\_Learning\_A\_Different\_Perspective \[Accessed 12 May 2022].
+
+## Hardware and Software Requirements:
+
+**Figures:**
+
+StatCounter (n.d.). _Browser Market Share Worldwide_. \[online] StatCounter Global Stats. Available at: https://gs.statcounter.com/browser-market-share.
+
+**References:**
+
+Microsoft (2022). _Requirements for Visual Studio Code_. \[online] code.visualstudio.com. Available at: https://code.visualstudio.com/docs/supporting/requirements \[Accessed 5 Jun. 2022].
+
+Google (2012). _Chrome Browser system requirements - Google Chrome Enterprise Help_. \[online] Google.com. Available at: https://support.google.com/chrome/a/answer/7100626?hl=en.
+
+StatCounter (n.d.). _Browser Market Share Worldwide_. \[online] StatCounter Global Stats. Available at: https://gs.statcounter.com/browser-market-share.
+
+Microsoft (2021). _Microsoft Edge Supported Operating Systems_. \[online] docs.microsoft.com. Available at: https://docs.microsoft.com/en-us/deployedge/microsoft-edge-supported-operating-systems.
+
+Apple (2009). _Safari 4 for Mac - Technical Specifications_. \[online] support.apple.com. Available at: https://support.apple.com/kb/sp552?locale=en\_GB.
