@@ -1,14 +1,14 @@
 # 2.1 Design Frame
 
+![](<../.gitbook/assets/image (1).png>)
+
 ## Systems Diagram
 
-![](<../.gitbook/assets/System Diagram.jpg>)
-
-This diagram shows the different parts of the game that I will focus on creating. I have split each section into smaller sub-sections. Throughout the development stage, I will pick one or two of these sections to focus on at a time to gradually build up and piece together the game. I have broken the project down this way as it roughly corresponds to the success criteria.
+This diagram shows the main focuses of my project and their sub focuses. Through development, I will focus on different sub sections that fit in with my development focus for the cycle I'm on. I broke down the project like this to show fit the success criteria and show how I wish to decompose the features of my project into more manageable smaller topics.
 
 ## Usability Features
 
-Usability is an important aspect to my game as I want it to be accessible to all. There are 5 key points of usability to create the best user experience that I will be focusing on when developing my project. These are:
+Usability is important for my project as it is aimed at schoolchildren, so the way that the user interacts with my project, the UI, needs to be as clear, understandable and intuitive as I can make it. Another aspect of this is making the simulation clear and easy to follow single agents within a single generation.
 
 ### Effective
 
