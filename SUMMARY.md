@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Some Generic Project](README.md)
+* [Neural Network Evolution Sim](README.md)
 
 ## 1 Analysis <a href="#analysis" id="analysis"></a>
 
