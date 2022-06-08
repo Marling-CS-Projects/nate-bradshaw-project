@@ -1,32 +1,31 @@
 # 2.1 Design Frame
 
-![](<../.gitbook/assets/image (1).png>)
-
 ## Systems Diagram
+
+![](<../.gitbook/assets/image (1).png>)
 
 This diagram shows the main focuses of my project and their sub focuses. Through development, I will focus on different sub sections that fit in with my development focus for the cycle I'm on. I broke down the project like this to show fit the success criteria and show how I wish to decompose the features of my project into more manageable smaller topics.
 
 ## Usability Features
 
-Usability is important for my project as it is aimed at schoolchildren, so the way that the user interacts with my project, the UI, needs to be as clear, understandable and intuitive as I can make it. Another aspect of this is making the simulation clear and easy to follow single agents within a single generation.
+Usability is important for my project as it is aimed at schoolchildren, so the usability features need to be implemented correctly to ensure the best experience for the user.
 
 ### Effective
 
-Users can achieve the goal with completeness and accuracy. To do this, I will make it easy for the players to realise that they need to reach a goal in order to complete a level. I will make this goal clear to see so there is no confusion over where the players need to go.
+I will need to make the goal and improvement of the agents clear over the generations to keep the player informed and engaged with the objective fore the agents
 
 #### Aims
 
-* Create a clear goal to reach to determine the end of a level
-* Create a clear goal for any multiplayer modes
+* Create clear indicators for the agent ai improvements
+* Keep the user engaged with the agents improvements
 
 ### Efficiency
 
-The speed and accuracy to which a user can complete the goal. To do this, I will create a menu system which is easy to navigate through in order for to find what you are looking for. The information which is more important can be found with less clicks.
+For user efficiency, the UI design needs to be as intuitive and respond quickly to user inputs. The options also need to be reachable without being hidden behind too many menus or options.
 
 #### Aims
 
-* Create a menu system that is quick and easy to navigate through
-* Create a controls system that isn't too complicated but allows the player to do multiple actions
+* Create a easy, readable and responsive UI
 
 ### Engaging
 
