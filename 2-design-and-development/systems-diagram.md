@@ -29,30 +29,29 @@ For user efficiency, the UI design needs to be as intuitive and respond quickly 
 
 ### Engaging
 
-The solution is engaging for the user to use. To do this, I will create 5 levels and an online multiplayer mode to keep the players engaged and allow them to have fun while playing the game. Using vector style art will also make the game nicer to look at than blocks, so will draw more people in, keeping them engaged.
+To keep the user engaged, I feel that a customisable stet of starting rules and environments would make the simulation feel more personalised. I also feel like speed controls would be needed for the user to skip over any potentially boring part of the machine learning.
 
 #### Aims
 
-* Create a series of levels to work through
-* Create a multiplayer mode to play
-* Incorporate a style of game art the suits the game
+* Create a variety of start conditions for the player to customise
+* Include speed controls whilst keeping the integrity of the simulation
 
 ### Error Tolerant
 
-The solution should have as few errors as possible and if one does occur, it should be able to correct itself. To do this, I will write my code to manage as many different game scenarios as possible so that it will not crash when someone is playing it.
+The systems that I will need to design will be the agents and UI input handling. If designed correctly, due to the lack of direct player control should also reduce unexpected errors. I do still have to make error handling to make sure the simulation doesn't crash in runtime.&#x20;
 
 #### Aims
 
 * The game doesn't crash
-* The game does not contain any bugs that damage the user experience
+* Try to remove as many bugs as I can
 
 ### Easy To Learn
 
-The solution should be easy to use and not be over complicated. To do this, I will create simple controls for the game. I will make sure that no more controls are added than are needed in order to keep them as simple as possible for the players.
+The simulation needs to have either popups or a tutorial to fully explain to the user their extent of interaction and what their interactions do.
 
 #### Aims
 
-* Create a list of controls for the game
+* Create a tutorial scene
 * Create an in-level guide that helps players learn how to play the game
 
 ## Pseudocode for the Game
