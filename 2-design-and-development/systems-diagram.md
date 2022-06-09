@@ -29,12 +29,13 @@ For user efficiency, the UI design needs to be as intuitive and respond quickly 
 
 ### Engaging
 
-To keep the user engaged, I feel that a customisable stet of starting rules and environments would make the simulation feel more personalised. I also feel like speed controls would be needed for the user to skip over any potentially boring part of the machine learning.
+The solution is engaging for the user to use. To do this, I will create 5 levels and an online multiplayer mode to keep the players engaged and allow them to have fun while playing the game. Using vector style art will also make the game nicer to look at than blocks, so will draw more people in, keeping them engaged.
 
 #### Aims
 
-* Create a variety of start conditions for the player to customise
-*
+* Create a series of levels to work through
+* Create a multiplayer mode to play
+* Incorporate a style of game art the suits the game
 
 ### Error Tolerant
 
