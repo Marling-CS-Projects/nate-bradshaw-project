@@ -1,31 +1,70 @@
-# 2.2.1 Cycle 1
+# 2.2.1 Cycle 1 - Setting up
+
+## Overview
+
+For the first development cycle, I wanted to set up the development environment with phaser.io and matter.js within visual studio and test it with a local host and a modified phaser example scene.
 
 ## Design
 
-### Objectives
-
-In this cycle, I aim to have the basic framework for the webpage and phaser library ready to build on top of it. I will aim to implement the base phaser demo within a webpage. I would like to get this done before any game / simulation design so I know it would work on a browser.
+### Objectives&#x20;
 
 * [x] Get a local web host working
 * [x] Set up a basic webpage
 * [x] Implement Phaser.io into the webpage
+* [x] Implement Matter.js within Phaser.io
 * [x] Get the Phaser.io demo working
+* [x] Modify the demo to test a future feature
 
 ### Usability Features
 
-* Working href links
+* Working href links on the webpage
 * Good contrast on the website for readability
+* Large game window size
 
-### Key Variables
+The phaser.io example I found was a chain drawing example using the mouse and matter.js. I took this and used constraint modification to remove any previous constraints on a new constraints creation.
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
+| Variable Name | Use                                                                                   |
+| ------------- | ------------------------------------------------------------------------------------- |
+| current       | Most recent shape created by the mouse.                                               |
+| previous      | 2nd most recent shape created by the mouse.                                           |
+| tempConst     | The current Constraint                                                                |
+| lastPosition  | A Vector2 that keeps track of the last shape created by the pointer.                  |
+| pinOptions    | A pre set range of settings that can be changed in one place to affect all instances. |
 
 ### Pseudocode
 
 ```
-<a href="game_page.htm">Game Page</a>
+var config = {
+    ---
+}
+
+function create(){
+    var current;
+    var pevious;
+    var tempConst;
+    
+    var lastPosition = vector2();
+    
+    var pinOptions = {options}
+    
+    OnClick{
+        lastPosition = mousePosition;
+        
+        matter.add.polygon(mousePosition, PinOptions);
+    }
+    
+OnDrag{
+    if (mousePosition isFarFrom lastPosition){
+        current = matter.add.polygon(mousePosition, PinOptions);
+        
+        if (tempConst != null)
+            delete tempconst;
+            
+        tempconst = matter.add.constraint(prevoius, current);
+        
+        previous = corrent;
+    }
+}
 ```
 
 ## Development
@@ -50,20 +89,28 @@ This allows me to quickly develop on both the website and phaser project as it u
 
 I then used a website template from W3Schools to quickly give it a nice look with a link to the phaser game on another page.
 
-The phaser library imported easily and the demo scene worked and even with some quick modifications (e.g making the canvas larger to see if the physics still work), it still worked as expected.
+The phaser library imported easily and the demo scene worked and allowed me to test new ideas and different parts of the physics engine that would be useful for the simulation.
 
 ### Challenges
 
-Trying to get the demo background in phaser to iteratively extend to the left when I resized the window proved a little difficult when getting to grip with the library, but I got it working n the end.
+Getting the constraints to delete posed a challenge initially, but after I found the correct method in the matter documentation I was able to implement it.&#x20;
 
 ## Testing
 
 ### Tests
 
-| Test | Instructions                 | What I expect | What actually happens | Pass/Fail |
-| ---- | ---------------------------- | ------------- | --------------------- | --------- |
-| 1    | Run code                     | Demo works    | Demo works            | Pass      |
-| 2    | Run code with extended scene | Demo works    | Demo works            | Pass      |
+| Test | Instructions             | What I expect                                 | What actually happens | Pass/Fail |
+| ---- | ------------------------ | --------------------------------------------- | --------------------- | --------- |
+| 1    | Run local host           | Webpage is viewable on my local host          | As Expected           | Pass      |
+| 2    | Run Phaser example scene | The webpage displays and run the phaser scene | As Expected           | Pass      |
+| 3    | Run modified example     | The webpage displays and run the phaser scene | As Expected           | Pass      |
 
 ### Evidence
 
+![Game Webpage](<../.gitbook/assets/image (1).png>)
+
+![Phaser example scene](<../.gitbook/assets/image (7).png>)
+
+![Initial constraint between two objects](<../.gitbook/assets/image (3).png>)
+
+![Only the most recent two objects have a constraint](<../.gitbook/assets/image (5).png>)
