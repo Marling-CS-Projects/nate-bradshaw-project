@@ -2,7 +2,7 @@
 description: Computer Science H446-03
 ---
 
-# Some Generic Project
+# Neural Network Evolution Sim
 
 |                  |                |
 | ---------------- | -------------- |
@@ -10,6 +10,8 @@ description: Computer Science H446-03
 | Candidate Number | 9999           |
 | Centre Name      | Marling School |
 | Centre Number    | 57037          |
+
+Project Github: [https://github.com/Nate-Bradshaw/PyMl](https://github.com/Nate-Bradshaw/PyMl)
 
 Note to Assessor: This project has been created with interactive elements. In order to view as intended by the students, please follow the secure link below.
 
