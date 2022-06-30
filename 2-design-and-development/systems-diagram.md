@@ -54,55 +54,54 @@ The simulation needs to have either popups or a tutorial to fully explain to the
 * Create a tutorial scene
 * Create an in-level guide that helps players learn how to play the game
 
-## Pseudocode for the Game
+## Pseudocode for the Simulation
 
-### Pseudocode for game
+### Design Pseudocode
 
-This is the basic layout of the object to store the details of the game. This will be what is rendered as it will inherit all important code for the scenes.
-
-```
-object Game
-    type: Phaser
-    parent: id of HTML element
-    width: width
-    height: height
-    physics: set up for physics
-    scenes: add all menus, levels and other scenes
-end object
-
-render Game to HTML web page
-```
-
-### Pseudocode for a level
-
-This shows the basic layout of code for a Phaser scene. It shows where each task will be executed.
+This is the pseudocode for how the menu and simulation logic could be constructed and flow.
 
 ```
-class Level extends Phaser Scene
+<script src="phaserGame.js"></script>
 
-    procedure preload
-        load all sprites and music
-    end procedure
+---
+
+var config{
+    physics: phaser{}
+}
+
+preload{
+    ground_Sprites;
+    UI_Sprites;
+}
+
+create(){
+    TitleScreen();
+    CreatureCreation();
+    RunSimulation();
+}
+
+update(){
+    RunNeuralNetwork();
+    CameraControls();
+    UIControls();
+    SimulationTracker(): //to log which agent preformed the best
+}
+```
+
+### Machine Learning Pseudocode
+
+This is a basic look at how I would plan to implement the agents within the simulation and the features I would give them as an object.
+
+```
+object Agent{
+    let randomNum = Randint(0-100) / 100;
+
+    if generation == 1
+    then 
+    GenerateNeuralNetwork(randomNum);
+    else 
+    InheritNeuralNetwork(randomNum, generation);
     
-    procedure create
-        start music
-        draw background
-        create players
-        create platforms
-        create puzzle elements
-        create enemies
-        create obstacles
-        create finishing position
-        create key bindings
-    end procedure
-    
-    procedure update
-        handle key presses
-        move player
-        move interactable objects
-        update animations
-        check if player at exit
-    end procedure
-    
-end class
+    RandomiseBody(randomNum, generation);
+}
 ```
