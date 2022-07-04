@@ -1,12 +1,8 @@
-# 2.2.1 Cycle 2 -
+# 2.2.1 Cycle template
 
 ## Overview
 
-workflow:
 
-switch to matter.js environment\
-set up composite body system\
-set up simulation part of the project
 
 ## Design
 
