@@ -66,7 +66,7 @@ This is the pseudocode for how the menu and simulation logic could be constructe
 ---
 
 var config{
-    physics: phaser{}
+    physics: Matter{}
 }
 
 preload{
