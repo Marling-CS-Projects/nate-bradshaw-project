@@ -1,4 +1,4 @@
-# 2.2.1 Cycle 3.5 - Collision Filtering
+# 2.2.3.5 Cycle 3.5 - Collision Filtering
 
 ## Overview
 
