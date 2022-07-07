@@ -73,7 +73,7 @@ OnDrag{
 
 I started with leaning how to use python3 to host a local webserver:
 
-```
+```python
 import http.server
 import socketserver
 

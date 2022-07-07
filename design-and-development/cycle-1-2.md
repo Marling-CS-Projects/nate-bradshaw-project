@@ -1,46 +1,147 @@
-# 2.2.1 Cycle template
+# 2.2.1 Cycle 3 - Setting up Functions
 
 ## Overview
 
-
+Now I'm using p5.js and Matter together, I want to set up some functions for creating common objects I will need to build the scene and creatures out of.
 
 ## Design
 
 ### Objectives&#x20;
 
-*
+* [x] Create a square creation function
+* [x] Create a circle creation function
+* [x] Create a constraint (the Matter.js name for bounds or springs) creation function
+* [x] Move these functions into a separate js file
+* [ ] Implement collision filtering
 
 ### Usability Features
 
+I want the functions to be flexible and have as wide of a scope as possible for their use cases.
 
-
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
-|               |     |
-|               |     |
-|               |     |
-|               |     |
+| Variable Name     | Use                                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------- |
+| this.show         | A function that can also be called to tell p5.js to render the object.                                                |
+| x, y              | The coordinates I want to create a body at, used in both the square and circle function.                              |
+| options           | allows me to pass more complex Matter.js options such as friction or collision filtering into the creation functions. |
+| w, h              | The width and height of the square, allowing the creation of rectangles.                                              |
+| r                 | The radius of the circle, defining its size.                                                                          |
+| body1, body2      | The two bodies that the constraint function attaches to.                                                              |
+| length, stiffness | options for constraints that are used in every case that I directly implemented into the function.                    |
 
 ### Pseudocode
 
 ```
+function square (x, y, w, h, options)
+    matter.createSquare(x, y, w, h, options)
+    
+    subFunction show()
+        x & y = matchPos()
+        rot = matchRotation()
+        p5.drawSquare(x, y, w, h, rot)
+        
+function circle (x, y, r, options)
+    matter.createCircle(x, y, r, options)
+    
+    subFunction show()
+        x & y = matchPos()
+        p5.drawCircle(x, y)
+ 
+ function constraint (body1, body2, length, stiffness)
+    matter.createConstraint(body1, body2, length, stiffness)
+
+    subFunction show()
+        p5.drawLine(body1.x, body1.y, body2.x, body2.y)
 ```
 
 ## Development
 
 ### Outcome
 
+After I made the square function using a tutorial, I was able to easily recreate it for the circle and constraint as the functions are all fundamentally the same despite some small differences like the circle function not needing to consider rotation when drawing as it looks the same either way (unless I add sprites to the circle in the future) or the constraint function needing a line drawn between two bodies to help visualise its position.
 
+```javascript
+function MyRect(x, y, w, h, options){
+    this.body = Bodies.rectangle(x, y, w, h, options);
+    this.w = w;
+    this.h = h;
 
+    World.add(engine.world, [this.body]);
+
+    this.show = function(){
+        var pos = this.body.position;
+        var angle = this.body.angle;
+        
+        push();
+        translate(pos.x, pos.y);
+        rotate(angle);
+        rectMode(CENTER); //The default center of a square in p5 is a corner, so
+                          //it needs to change to be the same as Matter, in the
+                          //center
+        rect(0, 0, this.w, this.h);
+        pop();
+    }
+}
+
+function MyCircle(x, y, r, options){
+    this.body = Bodies.circle(x, y, r, options);
+    this.r = r;
+
+    World.add(engine.world, [this.body]);
+
+    this.show = function(){
+        var pos = this.body.position;
+        //var angle = this.body.angle;
+        
+        push();
+        translate(pos.x, pos.y);
+        rectMode(CENTER);
+        circle(0, 0, r*2); //p5 creates a circle using its diameter
+        pop();
+    }
+}
+
+function MyConsraint(body1, body2, length, stiffness){
+
+    var constr = Constraint.create({
+        bodyA: body1.body,
+        bodyB: body2.body,
+        length: length,
+        stiffness: stiffness
+    })
+
+    World.add(engine.world, constr);
+
+    this.show = function(){
+        line(body1.body.position.x, 
+             body1.body.position.y, 
+             body2.body.position.x, 
+             body2.body.position.y);
+    }
 ```
+
+The options variable that is passed into the myRect and myCircle functions is very versatile, as if I don't need any custom options, passing nothing or null into it will not cause an error, as Matter.js seemingly just ignores it.
+
+Here's an example of how one of these functions would be used:
+
+```javascript
+  function setup() {
+    ...
+    ground = new MyRect(200, 390, 400, 20, { isStatic: true });
+    //creates the Matter.js object with the physics.
+    ...
+  }
+  
+  function draw() {
+    ...
+    ground.show();
+    //draws the p5.js object over the top, matching the Matter.js physics object.
+    ...
+  }
 ```
-
-
 
 ### Challenges
 
-
+For this development cycle, I also wanted to try and set up collision filtering with Matter.js, and I found three options you could pass into an objects creation for this, collisionFilter.group, collisionFilter.mask and collisionFilter.catagory. I tried to create the logic I wanted using collisionFilter.group and collisionFilter.mask due to collisionFilter.catagory using bit fields and being overall more complicated ...
 
 ## Testing
 

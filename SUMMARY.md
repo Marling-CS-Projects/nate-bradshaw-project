@@ -18,7 +18,9 @@
 * [2.1 Design Frame](2-design-and-development/systems-diagram.md)
 * [2.2.1 Cycle 1 - Setting up](2-design-and-development/cycle-1.md)
 * [2.2.1 Cycle 2 - Abandoning Phaser.io](design-and-development/cycle-1-1.md)
-* [2.2.1 Cycle template](design-and-development/cycle-1-2.md)
+* [2.2.1 Cycle 3 - Setting up Functions](design-and-development/cycle-1-2.md)
+* [2.2.1 Cycle 3.5 - Collision Filtering](design-and-development/cycle-1-3.md)
+* [2.2.1 Cycle template](design-and-development/cycle-1-4.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>
 

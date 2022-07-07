@@ -16,7 +16,7 @@ After working with Phaser for a couple weeks, I have decided to make a last minu
 
 ### Usability Features
 
-
+Due to this cycle being just groundwork, there are no usability features present for a user.
 
 | Variable Name | Use                                          |
 | ------------- | -------------------------------------------- |
