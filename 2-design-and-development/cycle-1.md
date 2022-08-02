@@ -107,7 +107,7 @@ Getting the constraints to delete posed a challenge initially, but after I found
 
 ### Evidence
 
-![Game Webpage](<../.gitbook/assets/image (1).png>)
+![Game Webpage](<../.gitbook/assets/image (1) (2).png>)
 
 ![Phaser example scene](<../.gitbook/assets/image (7) (1) (1).png>)
 

@@ -105,8 +105,8 @@ Also, for a future cycle potentially, I need to consider how p5.js renders objec
 
 ![Mouse constraint working.](<../.gitbook/assets/image (4).png>)
 
-![Circle colliding with box1 as expected.](<../.gitbook/assets/image (2).png>)
+![Circle colliding with box1 as expected.](<../.gitbook/assets/image (2) (1).png>)
 
 ![Circle not colliding with box2 as expected.](<../.gitbook/assets/image (5).png>)
 
-![Box1, box2, circle and constrained boxes collision working as expected.](<../.gitbook/assets/image (7).png>)
+![Box1, box2, circle and constrained boxes collision working as expected.](<../.gitbook/assets/image (7) (1).png>)

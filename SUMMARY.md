@@ -20,7 +20,8 @@
 * [2.2.2 Cycle 2 - Abandoning Phaser.io](design-and-development/cycle-1-1.md)
 * [2.2.3 Cycle 3 - Setting up Functions](<design-and-development/cycle-1-2 (1).md>)
 * [2.2.4 Cycle 4 - Collision Filtering](design-and-development/cycle-1-3.md)
-* [2.2.(num of cycle) Cycle template](design-and-development/cycle-1-2.md)
+* [2.2.5 Cycle 5 - Scenes and scene logoic](design-and-development/cycle-1-4.md)
+* [2.2.(num of cycle) Cycle template](design-and-development/cycle-1-5.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>
 

@@ -20,7 +20,7 @@ I want the functions to be flexible and have as wide of a scope as possible for 
 
 | Variable Name     | Use                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------- |
-| this.show         | A function that can also be called to tell p5.js to render the object.                                                |
+| this.show         | A nested function that can also be called to tell p5.js to render the object.                                         |
 | x, y              | The coordinates I want to create a body at, used in both the square and circle function.                              |
 | options           | allows me to pass more complex Matter.js options such as friction or collision filtering into the creation functions. |
 | w, h              | The width and height of the square, allowing the creation of rectangles.                                              |
