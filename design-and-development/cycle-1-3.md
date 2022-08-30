@@ -101,9 +101,9 @@ Also, for a future cycle potentially, I need to consider how p5.js renders objec
 
 ### Evidence
 
-![Initial scene, objects not falling through floor.](<../.gitbook/assets/image (6).png>)
+![Initial scene, objects not falling through floor.](<../.gitbook/assets/image (6) (1).png>)
 
-![Mouse constraint working.](<../.gitbook/assets/image (4).png>)
+![Mouse constraint working.](<../.gitbook/assets/image (4) (1).png>)
 
 ![Circle colliding with box1 as expected.](<../.gitbook/assets/image (2) (1).png>)
 

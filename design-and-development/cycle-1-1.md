@@ -71,7 +71,7 @@ function mouseDragged(){
   boxes.push(Matter.rectangle(mouse.x, mouse.y, w, h))
 ```
 
-![Falling squares](<../.gitbook/assets/image (3).png>)
+![Falling squares](<../.gitbook/assets/image (3) (2).png>)
 
 ### Challenges
 
@@ -95,4 +95,4 @@ The biggest challenge I had while developing this was with the Matter.js engine 
 
 ![Single square rendered with physics.](<../.gitbook/assets/image (2) (1) (2).png>)
 
-![Raining squares (mouse is above scene view)](<../.gitbook/assets/image (4) (1).png>)
+![Raining squares (mouse is above scene view)](<../.gitbook/assets/image (4) (1) (2).png>)
