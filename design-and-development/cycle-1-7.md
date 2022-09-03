@@ -1,8 +1,8 @@
-# Copy of 2.2.7 Cycle 7 - Simulation Scene Beginnings
+# 2.2.(num of cycle) Cycle template
 
 ## Overview
 
-For this cycle, I will be taking the creature created by the player and putting it into a new scene as an object that contains the composite with the physics objects and a draw function to render on top of the physics objects. This object will contain the neural evolution code in future cycles.
+
 
 ## Design
 
