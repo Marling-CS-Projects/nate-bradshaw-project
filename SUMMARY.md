@@ -22,8 +22,8 @@
 * [2.2.4 Cycle 4 - Collision Filtering](design-and-development/cycle-1-3.md)
 * [2.2.5 Cycle 5 - Scenes and scene logoic](design-and-development/cycle-1-4.md)
 * [2.2.6 Cycle 6 - Creature Creator](design-and-development/cycle-1-5.md)
-* [Copy of 2.2.7 Cycle 7 - Simulation Scene Beginnings](design-and-development/cycle-1-6.md)
-* [2.2.(num of cycle) Cycle template](design-and-development/cycle-1-7.md)
+* [2.2.7 Cycle 7 - Simulation Scene Beginnings](<design-and-development/cycle-1-6 (1).md>)
+* [2.2.(num of cycle) Cycle template](design-and-development/cycle-1-6.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>
 
