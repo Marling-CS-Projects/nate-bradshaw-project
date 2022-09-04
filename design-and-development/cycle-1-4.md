@@ -172,4 +172,4 @@ this.myMouseClicked = function(){
 
 ![Second scene loaded in runtime.](<../.gitbook/assets/image (2) (2).png>)
 
-![Inputs being handled through the scene manager](<../.gitbook/assets/image (1) (1) (1).png>)
+![Inputs being handled through the scene manager](<../.gitbook/assets/image (1) (1).png>)
