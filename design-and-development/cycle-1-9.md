@@ -1,4 +1,4 @@
-# 2.2.9 Cycle 9 - Camera and P5js improvements + memory leak issues
+# 2.2.(num of cycle) Cycle template
 
 ## Overview
 
