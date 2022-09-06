@@ -215,8 +215,8 @@ For test 5 I believe that the amount of collision layers in matter.js is capped 
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Unviable creature, game doesn't let you further after pressing "done"</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Unviable creature, game doesn't let you further after pressing "done"</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>1 creature in evolution_Scene.js with gravity and physics.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (4).png" alt=""><figcaption><p>1 creature in evolution_Scene.js with gravity and physics.</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>5 creatures in evolution_Scene.js with overlapping bounds and not colliding.</p></figcaption></figure>
