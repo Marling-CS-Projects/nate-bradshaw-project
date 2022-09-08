@@ -24,8 +24,10 @@
 * [2.2.6 Cycle 6 - Creature Creator](design-and-development/cycle-1-5.md)
 * [2.2.7 Cycle 7 - Simulation Scene Beginnings](design-and-development/cycle-1-6.md)
 * [2.2.8 Cycle 8 - Neural Evolution Beginnings](design-and-development/cycle-1-7.md)
-* [2.2.9 Cycle 9 - Camera and P5js improvements + memory leak issues](<design-and-development/cycle-1-8 (1).md>)
-* [2.2.(num of cycle) Cycle template](design-and-development/cycle-1-8.md)
+* [2.2.9 Cycle 9 - Camera and P5js improvements](<design-and-development/cycle-1-8 (1).md>)
+* [2.2.10 Cycle 10 - Neural Evolution Generations](design-and-development/cycle-1-9.md)
+* [2.2.11 Cycle 11 - Eliminating memory leak](design-and-development/cycle-1-10.md)
+* [2.2.(num of cycle) Cycle template](design-and-development/cycle-1-11.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>
 
