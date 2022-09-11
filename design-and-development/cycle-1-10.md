@@ -56,4 +56,10 @@ tensors (nn nodes) not being removed
 
 ### Evidence
 
-\*screenshots\*
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Initial memory leak</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>Memory leak after putting matter.world into a variable</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Very slight memory leak caused by tensors</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Memory leak eliminated</p></figcaption></figure>
