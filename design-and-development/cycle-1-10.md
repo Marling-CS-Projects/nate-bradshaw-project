@@ -64,4 +64,4 @@ tensors (nn nodes) not being removed
 
 <figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Memory leak eliminated</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>300 generations with no lag.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>300 generations with no lag.</p></figcaption></figure>
