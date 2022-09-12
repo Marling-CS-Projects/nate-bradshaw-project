@@ -57,14 +57,13 @@ if (temp != null) {
 And for limiting the constraints, for now I will just limit the size a constraint can shrink or grow to and then implement this logic better into the neural network later on.
 
 ```javascript
-//finish this psuedocode
-if (McreatureComposite.constraints[maxVal / 2].length <= compositeIn.constraints[maxVal / 2].length + 200) {
-  McreatureComposite.constraints[maxVal / 2].length += 5;
+if (muscleLengthCurrent <= muscleLengthOriginal + constLengthLimit) {
+  muscleLengthCurrent  += 5;
 }
 
-if (McreatureComposite.constraints[(maxVal - 1) / 2].length > 30 &&
-  McreatureComposite.constraints[(maxVal - 1) / 2].length >= compositeIn.constraints[(maxVal - 1) / 2].length - 200) {
-  McreatureComposite.constraints[(maxVal - 1) / 2].length -= 5;
+//make sure that the muscle cant get get smaller than the diameter of a node
+if (muscleLengthCurrent <= muscleLengthOriginal + constLengthLimit && muscleLengthCurrent > nodeDiameter) {
+  muscleLengthCurrent  -= 5;
 }
 ```
 
@@ -146,6 +145,12 @@ else {//odd
 }
 ```
 
+I also had to make the ground plane larger to match the more zoomed out view.
+
+```javascript
+ground = new MyRect(400, 1100, 9999999, 500, { isStatic: true }, world);
+```
+
 ### Challenges
 
 The biggest challenge was finding relevant information for a non WEBGL camera for p5.js, but other than that the implementation was a welcome break in difficulty.
@@ -154,12 +159,17 @@ The biggest challenge was finding relevant information for a non WEBGL camera fo
 
 ### Tests
 
-| Test | Instructions                                                                           | What I expect                                     | What actually happens                          | Pass/Fail |
-| ---- | -------------------------------------------------------------------------------------- | ------------------------------------------------- | ---------------------------------------------- | --------- |
-| 1    | In creature\_creator.js, create a node and create the start of a muscle from the node. | A line to be rendered from the node to the mouse. | A line is rendered from the node to the mouse. | Pass.     |
-| 2    |                                                                                        |                                                   |                                                |           |
-| 3    |                                                                                        |                                                   |                                                |           |
+| Test | Instructions                                                                                                         | What I expect                                                          | What actually happens                                                  | Pass/Fail |
+| ---- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | --------- |
+| 1    | In creature\_creator.js, create a node and create the start of a muscle from the node.                               | A line to be rendered from the node to the mouse.                      | A line is rendered from the node to the mouse.                         | Pass.     |
+| 2    | In creature\_creator.js, create a node and create the start of a muscle from the node and then click the node again. | The line rendered from the mouse disappears and no constraint is made. | The line rendered from the mouse disappears and no constraint is made. | Pass.     |
+| 3    | Create  a creature and go into evolution\_scene.js                                                                   | The camera to be zoomed out and to follow the rightmost creature.      | The camera is zoomed out and follows the rightmost creature.           | Pass.     |
+| 4    | Create  a creature and go into evolution\_scene.js                                                                   | The creatures to extend / retract the muscles but stop at the limit.   | The creatures muscles extend and retract and stop at the limit.        | Pass.     |
 
 ### Evidence
 
-\*screenshots\*
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>A  line drawn between a node and the mouse</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>A node after being clicked twice with a muscle</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>The creatures muscles being restricted (this is how far they grew / shrunk) The camera also followed the furthest right creature</p></figcaption></figure>
