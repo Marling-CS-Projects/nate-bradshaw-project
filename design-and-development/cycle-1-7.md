@@ -26,8 +26,8 @@ In this cycle I will be implementing a neural network using Tensorflow.js and in
 ### Pseudocode
 
 ```javascript
-function MyCreature(..., brain){
-    this.brain = NeuralNetwork.createModel();
+function MyCreature(brain){
+    this.brain = new NeuralNetwork();
     
     this.think = function() {   
         let inputs = [];
@@ -44,21 +44,17 @@ function MyCreature(..., brain){
 }
 
 class NeuralNetwork {
-    tf = TesorFlow.js
     constructor(){
-        this.model = create new medel()
+        addInputLayers(constraintAmount());
+        addHiddenLayers(constraintAmount());
+        //2 outputs for each constraint / muscle, 
+        //so each can be stretched or contracted
+        addOutputLayers(constraintAmount() * 2);
     }
 
     predict(inputs){
-        outputs = tf.evaluateInputs(inputs);
+        outputs = evaluateInputs(inputs);
         return outputs;
-    }
-    
-    createModel(){
-        tf.addInputLayers(constraintAmount());
-        tf.addHiddenLayers(constraintAmount());
-        //2 outputs for each constraint / muscle, so each can be stretched or contracted
-        tf.addOutputLayers(constraintAmount() * 2);
     }
 ```
 
@@ -150,6 +146,6 @@ The results do show, despite being a successful demonstration of the neural netw
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Constraints being lengthened / shortened by the neural network, 3 for each creature</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (5).png" alt=""><figcaption><p>Constraints being lengthened / shortened by the neural network, 3 for each creature</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Constraints being lengthened / shortened by the neural network, 10 for each creature</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Constraints being lengthened / shortened by the neural network, 10 for each creature</p></figcaption></figure>
