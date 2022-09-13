@@ -104,7 +104,7 @@ if(!timerStarted){
 }
 ```
 
-Finally, for the logic in evolution\_scene.js, when nextGen is called, It finds the best and second best creatures, puts their ID into an array and from that ID, the brain of that creature can be copied and mutated for a new creature in the next generation.
+After that, for the logic in evolution\_scene.js, when nextGen is called, It finds the best and second best creatures, puts their ID into an array and from that ID, the brain of that creature can be copied and mutated for a new creature in the next generation.
 
 ```javascript
 function nextGen(){
@@ -176,6 +176,17 @@ function findBest() {
 }
 ```
 
+Finally, I added some simple text to the canvas using p5.js, and if I place it in the canvas after its been transformed, the text stays still on the canvas even when the rest of it pans. I also added another line of text to tell the user which creature was doing the best and its position.
+
+```javascript
+stroke(0);
+fill(150);
+textSize(32);
+text('Generation: ' + currentGen, 0, 42);
+text(("Current Best Creature: " + (firstBestID + 1) + " at " + parseInt((bestX - startingPos))), 0, 72)
+fill(255);
+```
+
 ### Challenges
 
 Learning the concepts of neural networks to be able to understand the process going on within Tensorflow.js has been the greatest challenge of this cycle. Luckily, back propagation isn't required for neuro evolution, as there is no training data needed, as the neural network evolves on its own
@@ -184,15 +195,15 @@ Learning the concepts of neural networks to be able to understand the process go
 
 ### Tests
 
-| Test | Instructions                              | What I expect | What actually happens | Pass/Fail |
-| ---- | ----------------------------------------- | ------------- | --------------------- | --------- |
-| 1    | add text code to same place as timer code |               |                       |           |
-| 2    |                                           |               |                       |           |
+| Test | Instructions                                                                                               | What I expect                                                                                                          | What actually happens                                                                                               | Pass/Fail |
+| ---- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | --------- |
+| 1    | In evolution\_scene.js, wait for a new generation.                                                         | The generation counter to go up 1 and a new set of creatures to be created in the same place as the original creatures | The generation counter goes up 1 and a new set of creatures are created in the same place as the original creatures | Pass.     |
+| 2    | Leave evolution\_scene.js running for 50 generations to see if there is improvements in the neural network | The creatures become better at moving to the right.                                                                    | The scene starts lagging around generation 10 and further lags with each generation until its too slow to run.      | Fail.     |
 
-
+Looking into this lag issue, I found that more and more memory is being used each generation, which is a big problem as it makes the program completely unusable in a web application. This memory leak will have a dedicated cycle to get rid of it. Unfortunately, this means evolution can't be properly observed and tested until this is fixed.
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (2) (5).png" alt=""><figcaption><p>Constraints being lengthened / shortened by the neural network, 3 for each creature</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption><p>Text working.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Constraints being lengthened / shortened by the neural network, 10 for each creature</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption><p>New generation created.</p></figcaption></figure>

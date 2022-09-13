@@ -113,4 +113,4 @@ Getting the constraints to delete posed a challenge initially, but after I found
 
 ![Initial constraint between two objects](<../.gitbook/assets/image (3) (1).png>)
 
-![Only the most recent two objects have a constraint](<../.gitbook/assets/image (5) (1).png>)
+![Only the most recent two objects have a constraint](<../.gitbook/assets/image (5) (1) (1).png>)
