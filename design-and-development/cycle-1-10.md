@@ -49,18 +49,19 @@ Before I got to the final solution for removing the composite based memory leak 
 
 ### Outcome
 
-
+Starting of with the biggest cause of memory leak, the bodies objects. I found this as a cause of leak by the increasing amount of matter bodies in memory with each generation.
 
 ```javascript
 function nextGen() {
     let tempCreatureContainer = []; //new container so I can clear the last gen
     currentGen += 1;
 
-    //find first, second and third best
+    //find first and second best
     findBest();
 
-    for (let i = 0; i < creatureNum; i++) { //half are from num 1
+    for (let i = 0; i < creatureNum; i++) {
       if (i < creatureNum / 2) { //half use 1st
+        //put the new bodies under a different array so I can clear the last gen
         tempCreatureContainer[i] = mutateCreature(0, i);
       }
       else { //half use 2nd
@@ -71,16 +72,17 @@ function nextGen() {
     console.log(tempCreatureContainer)
 
     for (let i = 0; i < creatureNum; i++) {
-      creatureContainer[i].creatureReset();
-      creatureContainer[i].dispose();
+      creatureContainer[i].creatureReset(); //new function
+      creatureContainer[i].dispose(); //deletes lat generations tensors
     }
 
-    for (let i = 0; i < creatureNum; i++) {
+    for (let i = 0; i < creatureNum; i++) { //creating a new generation
       creatureContainer[i] = tempCreatureContainer[i];
       creatureContainer[i].creatureSetup();
       Composite.add(world, creatureContainer[i].McreatureComposite);
     }
 
+    //ready for next generationcode
     console.log(world)
     tempCreatureContainer = [];
     bestCreaturesFromLastGen = [];
@@ -88,12 +90,6 @@ function nextGen() {
   }
 
   function mutateCreature(ID, index) {
-    /*
-    //console.log(bestCreaturesFromLastGen, "before")
-    creatureContainer[index].copy(bestCreaturesFromLastGen[ID]);
-    //console.log(bestCreaturesFromLastGen, "after")
-    creatureContainer[index].mutate();
-    */
     let child = new MyCreature(index, creatureCompositeIn, 2**index, bestCreaturesFromLastGen[ID]);
     child.mutate();
     return child;
@@ -105,7 +101,6 @@ function nextGen() {
     for (let i = 0; i < creatureContainer.length; i++) {
       tempArray.push(creatureContainer[i].averageX);
     }
-    //console.log(tempArray)
 
     for (let i = 0; i < tempArray.length; i++) {
       let temp = tempArray[i]
@@ -114,29 +109,41 @@ function nextGen() {
         firstBestID = i;
       }
     }
-    //console.log(firstBestID)
     bestCreaturesFromLastGen.push(creatureContainer[firstBestID].brain)
 
     tempArray.splice(firstBestID, 1, 0);
-    //console.log(tempArray)
     bestX = 0;
     for (let i = 0; i < tempArray.length; i++) {
       let temp = tempArray[i]
-      //console.log(temp);
       if (temp > bestX) {
         bestX = temp;
         secondBestID = i;
       }
     }
-    //console.log(secondBestID)
     bestCreaturesFromLastGen.push(creatureContainer[secondBestID].brain)
-    //console.log(bestCreaturesFromLastGen);
   }
 }
 
 ```
 
-For the TensorFlow memory leak, however, I only needed to add minimal lines of code to use TensorFlow's own function for deleting tensors. The challenge was realising I had to place this after I had copied the best brain from the last generation.
+```javascript
+//remove all the bodies to make sure 0 references exist to it
+this.creatureReset = function () {
+  for (let i = 0; i < compositeIn.constraints.length; i++) {
+  //matter.js function to remove a reference from a composite
+    Composite.remove(McreatureComposite, McreatureComposite.constraints[0]);
+  }
+  for (let i = 0; i < compositeIn.bodies.length; i++) {
+    Composite.remove(McreatureComposite, McreatureComposite.bodies[0]);
+  }
+  //making sure the renderer also has no references
+  McreatureRenderer.splice(0, McreatureRenderer.length);
+  //removing the reference from the world composite
+  Composite.remove(world, McreatureComposite);
+}
+```
+
+For the TensorFlow memory leak, however, I only needed to add minimal lines of code to use TensorFlow's own function for deleting tensors. The challenge was realising I had to place this after I had copied the best brain from the last generation. I found this leak by typing tf.memory(); into the console in runtime and observing an increase in the tensor count returned.
 
 ```javascript
 //NeualNetwork object
@@ -147,26 +154,24 @@ dispose() {
 
 ### Challenges
 
-
+The challenge of fixing memory leak was finding it in the first place, as I started of clueless to why there was so much memory build up, so I needed to find the cause of the issue blindly before I could even try fixing it.
 
 ## Testing
 
 ### Tests
 
-| Test | Instructions | What I expect | What actually happens | Pass/Fail |
-| ---- | ------------ | ------------- | --------------------- | --------- |
-| 1    |              |               |                       |           |
-| 2    |              |               |                       |           |
-| 3    |              |               |                       |           |
+| Test | Instructions                                                | What I expect                                                                      | What actually happens                                                           | Pass/Fail |
+| ---- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | --------- |
+| 1    | Type tf.memory(); into the console in generation 1 and 2.   | Both to return the same number.                                                    | Both return the same number.                                                    | Pass.     |
+| 2    | Run the simulation and create a memory snapshot over 3mins. | The memory usage to stay level.                                                    | The memory usage stayed level.                                                  | Pass.     |
+| 3    | Run a 300 generation long simulation.                       | Performance for the 300th generation to be no different from the first generation. | Performance for the 300th generation is no different from the first generation. | Pass.     |
 
 ### Evidence
 
 <figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Initial memory leak</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>Memory leak after putting matter.world into a variable</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>Memory leak after removing matter.js bodies</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Very slight memory leak caused by tensors</p></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Memory leak eliminated</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Memory leak after removing used tensors.</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>300 generations with no lag.</p></figcaption></figure>
