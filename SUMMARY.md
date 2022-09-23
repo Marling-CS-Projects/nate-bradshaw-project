@@ -16,18 +16,21 @@
 ## 2 Design and Development <a href="#design-and-development" id="design-and-development"></a>
 
 * [2.1 Design Frame](2-design-and-development/systems-diagram.md)
-* [2.2.1 Cycle 1 - Setting up](2-design-and-development/cycle-1.md)
+* [2.2.1 Cycle 1 - Setting Up](2-design-and-development/cycle-1.md)
 * [2.2.2 Cycle 2 - Abandoning Phaser.io](design-and-development/cycle-1-1.md)
-* [2.2.3 Cycle 3 - Setting up Functions](<design-and-development/cycle-1-2 (1).md>)
+* [2.2.3 Cycle 3 - Setting Up Functions](<design-and-development/cycle-1-2 (1).md>)
 * [2.2.4 Cycle 4 - Collision Filtering](design-and-development/cycle-1-3.md)
-* [2.2.5 Cycle 5 - Scenes and scene logoic](design-and-development/cycle-1-4.md)
+* [2.2.5 Cycle 5 - Scenes and Scene Logic](design-and-development/cycle-1-4.md)
 * [2.2.6 Cycle 6 - Creature Creator](design-and-development/cycle-1-5.md)
 * [2.2.7 Cycle 7 - Simulation Scene Beginnings](design-and-development/cycle-1-6.md)
 * [2.2.8 Cycle 8 - Neural Evolution Beginnings](design-and-development/cycle-1-7.md)
-* [2.2.9 Cycle 9 - Camera and P5js improvements](<design-and-development/cycle-1-8 (1).md>)
+* [2.2.9 Cycle 9 - Camera and P5.js Improvements](<design-and-development/cycle-1-8 (1).md>)
 * [2.2.10 Cycle 10 - Neural Evolution Generations](design-and-development/cycle-1-9.md)
-* [2.2.11 Cycle 11 - Eliminating memory leak](design-and-development/cycle-1-10.md)
-* [2.2.(num of cycle) Cycle template](design-and-development/cycle-1-11.md)
+* [2.2.11 Cycle 11 - Eliminating Memory Leak](design-and-development/cycle-1-10.md)
+* [2.2.12 Cycle 12 - Adjustments and Visual Clarity](design-and-development/cycle-1-11.md)
+* [2.2.13 Cycle 13 - Alternative Objectives](design-and-development/cycle-1-12.md)
+* [2.2.14 Cycle 14 - Main Menu](design-and-development/cycle-1-13.md)
+* [2.2.(num of cycle) Cycle template](design-and-development/cycle-1-14.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>
 
