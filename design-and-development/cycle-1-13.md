@@ -1,4 +1,4 @@
-# 2.2.14 Cycle 14 - Main Menu
+# 2.2.(num of cycle) Cycle template
 
 ## Overview
 

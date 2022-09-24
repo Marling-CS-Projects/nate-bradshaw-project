@@ -1,4 +1,4 @@
-# 2.2.11 Cycle 11 - Eliminating memory leak
+# 2.2.11 Cycle 11 - Eliminating Memory Leak
 
 ## Overview
 
@@ -174,4 +174,4 @@ The challenge of fixing memory leak was finding it in the first place, as I star
 
 <figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Memory leak after removing used tensors.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>300 generations with no lag.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (4).png" alt=""><figcaption><p>300 generations with no lag.</p></figcaption></figure>
