@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Neural Evolution Sim  https://forms.gle/kf7zYH8vTNtMfxEU8](README.md)
+* [Neural Evolution Sim](README.md)
 
 ## 1 Analysis <a href="#analysis" id="analysis"></a>
 
