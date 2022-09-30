@@ -1,30 +1,24 @@
-# 2.2.(num of cycle) Cycle template
+# 2.2.14 Cycle 14 - Final webpage and HTML improvements
 
 ## Overview
 
-
+I have decided to implement the instructions to my project outside of it and instead on the webpage preceding it.
 
 ## Design
 
 ### Objectives&#x20;
 
-*
-
-### Usability Features
-
-
-
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
-|               |     |
-|               |     |
-|               |     |
-|               |     |
+* [x] Add instructions index webpage
+* [x] Create an instructional image
+* [x] Create a favicon for the website
 
 ### Pseudocode
 
-```javascript
+```html
+<link rel="icon" href="WebpageIcon.png">
+
+<p>*instructions*<p>
+<img src="InstructionalImage.png">
 ```
 
 ## Development
