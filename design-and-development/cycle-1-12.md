@@ -254,6 +254,6 @@ The main challenge of this cycle was implementing the jump mode, as it required 
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>DOM elements working</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Jump mode</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Jump mode</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Obstacle mode</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Obstacle mode</p></figcaption></figure>

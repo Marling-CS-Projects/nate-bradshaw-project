@@ -148,4 +148,4 @@ The results do show, despite being a successful demonstration of the neural netw
 
 <figure><img src="../.gitbook/assets/image (2) (4).png" alt=""><figcaption><p>Constraints being lengthened / shortened by the neural network, 3 for each creature</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Constraints being lengthened / shortened by the neural network, 10 for each creature</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (3).png" alt=""><figcaption><p>Constraints being lengthened / shortened by the neural network, 10 for each creature</p></figcaption></figure>

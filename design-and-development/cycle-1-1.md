@@ -93,6 +93,6 @@ The biggest challenge I had while developing this was with the Matter.js engine 
 
 ![Ground plane in an empty scene.](<../.gitbook/assets/image (7) (1) (2).png>)
 
-![Single square rendered with physics.](<../.gitbook/assets/image (2) (1) (2).png>)
+![Single square rendered with physics.](<../.gitbook/assets/image (2) (1) (2) (1).png>)
 
 ![Raining squares (mouse is above scene view)](<../.gitbook/assets/image (4) (1) (2).png>)
