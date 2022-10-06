@@ -76,7 +76,7 @@ For a final touch to the webpage, I decided to add a favicon. To do this I once 
 
 Finally, I went to the repository settings, and on the sub menu of "Pages" selected the main branch to be hosted.
 
-[https://marling-cs-projects.github.io/Nate-Bradshaw-A-Level-Project/game\_page.html](https://marling-cs-projects.github.io/Nate-Bradshaw-A-Level-Project/game\_page.html)
+[https://marling-cs-projects.github.io/Nate-Bradshaw-A-Level-Project/index.html](https://marling-cs-projects.github.io/Nate-Bradshaw-A-Level-Project/index.html)
 
 ### Challenges
 
