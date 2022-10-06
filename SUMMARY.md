@@ -29,7 +29,7 @@
 * [2.2.11 Cycle 11 - Eliminating Memory Leak](design-and-development/cycle-1-10.md)
 * [2.2.12 Cycle 12 - Adjustments and Visual Clarity](design-and-development/cycle-1-11.md)
 * [2.2.13 Cycle 13 - Alternative Objectives](design-and-development/cycle-1-12.md)
-* [2.2.14 Cycle 14 - Final webpage and HTML improvements](design-and-development/cycle-1-13.md)
+* [2.2.14 Cycle 14 - Final webpage improvements and hosting.](design-and-development/cycle-1-13.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>
 

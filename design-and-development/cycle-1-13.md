@@ -1,4 +1,4 @@
-# 2.2.14 Cycle 14 - Final webpage and HTML improvements
+# 2.2.14 Cycle 14 - Final webpage improvements and hosting.
 
 ## Overview
 
@@ -11,6 +11,7 @@ I have decided to implement the instructions to my project outside of it and ins
 * [x] Add instructions index webpage
 * [x] Create an instructional image
 * [x] Create a favicon for the website
+* [x] Host the webpage on GitHub Pages
 
 ### Pseudocode
 
@@ -73,6 +74,8 @@ For a final touch to the webpage, I decided to add a favicon. To do this I once 
 <link rel="icon" href="Icon.png">
 ```
 
+Finally, I went to the repository settings, and on the sub menu of "Pages" selected the main branch to be hosted.
+
 ### Challenges
 
 Due to the simplicity and small scale of this cycle, there wasn't much difficulty to it.
@@ -81,9 +84,10 @@ Due to the simplicity and small scale of this cycle, there wasn't much difficult
 
 ### Tests
 
-| Test | Instructions                                             | What I expect                                        | What actually happens                                | Pass/Fail |
-| ---- | -------------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | --------- |
-| 1    | Check all added html elements are present on both pages. | All added elements are present where they should be. | All added elements are present where they should be. | Pass.     |
+| Test | Instructions                                                                                    | What I expect                                        | What actually happens                                | Pass/Fail |
+| ---- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | --------- |
+| 1    | Check all added html elements are present on both pages.                                        | All added elements are present where they should be. | All added elements are present where they should be. | Pass.     |
+| 2    | Check the GitHub Pages hosted webpage has the same functionality as the locally hosted webpage. | All functionality and libraries / code is present.   | All functionality and libraries / code is present.   | Pass.     |
 
 ### Evidence
 
@@ -92,3 +96,5 @@ Due to the simplicity and small scale of this cycle, there wasn't much difficult
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>game_page.html</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Favicon</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Website hosted on GitHub Pages</p></figcaption></figure>
