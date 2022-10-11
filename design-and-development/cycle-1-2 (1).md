@@ -1,4 +1,4 @@
-# 2.2.3 Cycle 3 - Setting up Functions
+# 2.2.3 Cycle 3 - Setting Up Functions
 
 ## Overview
 
@@ -169,4 +169,4 @@ For this development cycle, I also wanted to try and set up collision filtering 
 
 ### Evidence
 
-![Squares, rectangles, a circle and a constrain with a static square all created using my functions.](<../.gitbook/assets/image (8).png>)
+![Squares, rectangles, a circle and a constrain with a static square all created using my functions.](<../.gitbook/assets/image (8) (1).png>)

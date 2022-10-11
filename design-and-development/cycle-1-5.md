@@ -320,7 +320,7 @@ function restartButtonDown(){
 
 <figure><img src="../.gitbook/assets/image (12) (1).png" alt=""><figcaption><p>Buttons location staying the same when the window is resized</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption><p>Joint placement</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption><p>Joint placement</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (3) (3) (1).png" alt=""><figcaption><p>Constraint placement</p></figcaption></figure>
 

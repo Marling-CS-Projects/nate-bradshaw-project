@@ -206,4 +206,4 @@ Looking into this lag issue, I found that more and more memory is being used eac
 
 <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption><p>Text working.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption><p>New generation created.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption><p>New generation created.</p></figcaption></figure>
