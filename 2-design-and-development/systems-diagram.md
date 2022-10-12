@@ -2,7 +2,7 @@
 
 ## Systems Diagram
 
-![](<../.gitbook/assets/image (1) (1) (2).png>)
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 This diagram shows the main focuses of my project and their sub focuses. Through development, I will focus on different sub sections that fit in with my development focus for the cycle I'm on. I broke down the project like this to show fit the success criteria and show how I wish to decompose the features of my project into more manageable smaller topics.
 
