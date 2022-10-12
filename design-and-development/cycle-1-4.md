@@ -168,8 +168,8 @@ this.myMouseClicked = function(){
 
 ### Evidence
 
-![First scene loaded.](<../.gitbook/assets/image (10) (1).png>)
+![First scene loaded](<../.gitbook/assets/image (10) (1).png>)
 
-![Second scene loaded in runtime.](<../.gitbook/assets/image (2) (2).png>)
+![Second scene loaded in runtime](<../.gitbook/assets/image (2) (2).png>)
 
 ![Inputs being handled through the scene manager](<../.gitbook/assets/image (1) (1) (3).png>)
