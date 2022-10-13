@@ -121,4 +121,4 @@ The main challenge with this cycle was fine tuning the stiffness of the constrai
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Demonstration of better average x without best peak x</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption><p>Demonstration of better average x without best peak x</p></figcaption></figure>

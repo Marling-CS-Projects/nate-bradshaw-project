@@ -2,7 +2,7 @@
 
 ## Systems Diagram
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 This diagram shows the main focuses of my project and their sub focuses. Through development, I will focus on different sub sections that fit in with my development focus for the cycle I'm on. I broke down the project like this to show fit the success criteria and show how I wish to decompose the features of my project into more manageable smaller topics.
 
@@ -25,7 +25,8 @@ For user efficiency, the UI design needs to be as intuitive and respond quickly 
 
 #### Aims
 
-* Create a easy, readable and responsive UI
+* Create a easy to use UI
+* Make the creature setup straight forward
 
 ### Engaging
 
@@ -51,8 +52,8 @@ The simulation needs to have either popups or a tutorial to fully explain to the
 
 #### Aims
 
-* Create a tutorial scene
-* Create an in-level guide that helps players learn how to play the game
+* Create a tutorial
+* Keep the design, visually and logically, simple and easy to understand&#x20;
 
 ## Pseudocode for the Simulation
 
@@ -94,13 +95,12 @@ This is a basic look at how I would plan to implement the agents within the simu
 
 ```
 object Agent{
-    let randomNum = Randint(0-100) / 100;
+    let randomNum(0-1);
 
     if generation == 1
-    then 
-    GenerateNeuralNetwork(randomNum);
+        GenerateNeuralNetwork(randomNum);
     else 
-    InheritNeuralNetwork(randomNum, generation);
+        InheritNeuralNetwork(randomNum, generation);
     
     RandomiseBody(randomNum, generation);
 }
