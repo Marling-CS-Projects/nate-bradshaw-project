@@ -1,8 +1,8 @@
-# 2.2.14 Cycle 14 - Final webpage improvements and hosting.
+# 2.2.14 Cycle 14 - Webpage improvements and hosting.
 
 ## Overview
 
-I have decided to implement the instructions to my project outside of it and instead on the webpage preceding it.
+For this cycle I will improve the website surrounding the project to add instructional material alongside a couple visual tweaks.
 
 ## Design
 
