@@ -1,4 +1,4 @@
-# 2.2.1 Cycle 1 - Setting up
+# 2.2.1 Cycle 1 - Setting Up
 
 ## Overview
 
@@ -111,6 +111,6 @@ Getting the constraints to delete posed a challenge initially, but after I found
 
 ![Phaser example scene](<../.gitbook/assets/image (7) (1) (1).png>)
 
-![Initial constraint between two objects](<../.gitbook/assets/image (3) (1).png>)
+![Initial constraint between two objects](<../.gitbook/assets/image (3) (1) (2).png>)
 
 ![Only the most recent two objects have a constraint](<../.gitbook/assets/image (5) (1) (1).png>)

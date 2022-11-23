@@ -99,7 +99,7 @@ function nextCreatureButtonDown() {
   }
 }</code></pre>
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>The buttons cycle through and the creature in blue is the one selected.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (4).png" alt=""><figcaption><p>The buttons cycle through and the creature in blue is the one selected.</p></figcaption></figure>
 
 I also added some text to tell the user what creature has been highlighted and its current position. I  also added an alternative line of text for when the peak y needs to be displayed.
 
@@ -119,7 +119,7 @@ else{
 
 Moving onto the time control, during the researching and testing, I quickly found that matter.js simulation speed control (engine.timing.timeScale) got quite buggy, especially when speeding up, with bodies falling through each other and off the screen. I found that a time multiplier range of 0.1 to 1.3 was suitable, as the simulation stayed stable within these values.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Time scale set to 2 breaking the simulation.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Time scale set to 2 breaking the simulation.</p></figcaption></figure>
 
 ### Time Control: Outcome
 
@@ -217,25 +217,36 @@ this.think = function (timeScale = 1) {
 {% endtab %}
 {% endtabs %}
 
+After this, I then added some more text to the canvas to give the user feedback on the time left in the generation and the timescale they were using.
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>The timer counts down faster / slower proportional to the timescale.</p></figcaption></figure>
+
+```javascript
+text(("Time: " + (timeCount).toFixed(1)), 0, 132)
+text(("Current Time Scale: " + currentTimeScale), 0, 162)
+```
+
 ### Challenges
 
-Getting the timer
+The main challenge with this cycle was getting the timer to adjust, as before I was using setTimeout() to wait the whole cycles length, so I had to adapt this to show a decreasing timer and adapt to the timescale. Th biggest problem was that I was lacking the clearInterval(), so the timer would speed up constantly.
 
 ## Testing
 
 ### Tests
 
-| Test | Instructions | What I expect | What actually happens | Pass/Fail |
-| ---- | ------------ | ------------- | --------------------- | --------- |
-| 1    |              |               |                       | Pass.     |
-| 2    |              |               |                       | Pass.     |
+| Test | Instructions                                                                               | What I expect                                                                    | What actually happens                                                                                    | Pass/Fail                          |
+| ---- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| 1    | Test the creature highlight with all creature objectives.                                  | No difference between "move to left" and "obstacles", current peak y for "jump". | As expected.                                                                                             | Pass.                              |
+| 2    | Test the interaction of having the highlighted creature and first creature being the same. | The creature is the last colour rendered is used (blue).                         | No visual difference, but I noticed that the neural network was being activate twice due to the overlap. | Pass. (fixed with an if statement) |
+| 3    | Observe the timer speeding up / slowing based on the time scale.                           | The timer speed to change proportionally to the time scale.                      | As expected.                                                                                             | Pass.                              |
+| 4    | Move the time scale rapidly from side to side.                                             | Nothing significant.                                                             | The physic engine can't handle the rapid time scale change and the creatures break.                      | Fail.                              |
+
+Due to test 4's fail, I made the time scale only update at the start of a generation, allowing the user to still interact with this system without breaking the simulation.
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>index.html</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>1.3x time scale working with a 1st and separate selected creature</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>game_page.html</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>No issues with 1st and selected being the same.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Favicon</p></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (5) (3).png" alt=""><figcaption><p>Website hosted on GitHub Pages</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>0.1x time scale working and alternative text for "jump".</p></figcaption></figure>
