@@ -17,7 +17,7 @@
 
 * [2.1 Design Frame](2-design-and-development/systems-diagram.md)
 * [2.2.1 Cycle 1 - Setting Up](2-design-and-development/cycle-1.md)
-* [2.2.2 Cycle 2 - Abandoning Phaser.io](design-and-development/cycle-1-1.md)
+* [2.2.2 Cycle 2 - Switching to Matter.js and P5.js](design-and-development/cycle-1-1.md)
 * [2.2.3 Cycle 3 - Setting Up Functions](<design-and-development/cycle-1-2 (1).md>)
 * [2.2.4 Cycle 4 - Collision Filtering](design-and-development/cycle-1-3.md)
 * [2.2.5 Cycle 5 - Scenes and Scene Logic](design-and-development/cycle-1-4.md)
