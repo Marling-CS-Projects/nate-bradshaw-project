@@ -14,8 +14,6 @@ blue select done in place order
 
 ### Usability Features
 
-
-
 | Variable Name     | Use                                                                |
 | ----------------- | ------------------------------------------------------------------ |
 | obstacleContainer | contains all the obstacle objects.                                 |
