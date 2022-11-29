@@ -17,16 +17,6 @@ Within this cycle I want to focus on user interaction within the simulation by i
 * [x] Make neural network muscle movement speed match the time control
 * [x] Make the timer slow down / speed up to match the time control
 
-### Usability Features
-
-| Variable Name          | Use                                                                                      |
-| ---------------------- | ---------------------------------------------------------------------------------------- |
-| creatureSelectedID     | The current creature that the user is viewing, used to render that creature differently. |
-| nextCreatureButton     | The button that allows the user to cycle forward through the creatures.                  |
-| previousCreatureButton | The button that allows the user to cycle backward through the creatures.                 |
-| currentTimeScale       | The current time scaling for the simulation.                                             |
-| timeScaleSlider        | The slider that allows the user to change the time scale of the simulation.              |
-
 ### Pseudocode
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>let selectedCreature = 0;
@@ -73,14 +63,14 @@ This task was relatively easy due to the creature object already having ID's fro
   
   nextCreatureButton.center('horizontal');
   nextCreatureButton.position(nextCreatureButton.position().x,
-  nextCreatureButton.position().y + 20);
+    nextCreatureButton.position().y + 20);
   
   previousCreatureButton = createButton('View Previous Creature');
   previousCreatureButton.mousePressed(previousCreatureButtonDown);
   
   previousCreatureButton.center('horizontal');
   previousCreatureButton.position(previousCreatureButton.position().x,
-  previousCreatureButton.position().y + 50);
+    previousCreatureButton.position().y + 50);
     //...//
 }
 

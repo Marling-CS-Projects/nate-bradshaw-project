@@ -1,44 +1,35 @@
-# 2.2.16 Cycle 16 - Code Clean-up
+# 2.2.16 Cycle 16 - Leader board
 
 ## Overview
 
 redid best x / peak y code to have an array of all\
 added a leader board\
-blue select done in place order
+blue select done in place order\
+reintroduced keeping of best creature from last gen to stop devolution
 
 ## Design
 
 ### Objectives&#x20;
 
-*
+* [x] Sort the creatures based on their average x / best y to get a full leader board
+* [x] Change the selection feature to cycle through the leader board
+* [x] Add a visual representation of the leader board
 
 ### Usability Features
 
-| Variable Name     | Use                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| obstacleContainer | contains all the obstacle objects.                                 |
-| findBestY()       | Duplicate of the findBestX() function but reworked to find best Y. |
-| bestY             | The highest y coordinate from all of a creatures joints.           |
-| placeOnGround()   | A function to place a creature on the ground.                      |
+| Variable Name             | Use                                                             |
+| ------------------------- | --------------------------------------------------------------- |
+| proxyCreatureContainer\[] | Holds the position of the creatures in the leader board         |
+| leaderboard\[]            | Holds the DOM text for displaying the leader board to the user. |
 
 ### Pseudocode
 
 ```javascript
-generationTime = slider(5, 20)
+creatureContainer.sort(creatureContainer[].averageX)
+//the cycling should work with a solution like this
 
-mode = dropdown(moveToRight, obstacles, jump)
-
-if (mode == obstacles){
-    for (let i = 0; i < 5; i++){
-        new Rect(...)
-    }
-}
-
-if(mode == jump){
-  findBestY();
-}
-else{
-  findBestX();
+for (let i = 0; i < creatureNum; i++;){ //text to show each creature and its place
+    text(i, " place: ", creatureContainer[i].ID)
 }
 ```
 
@@ -46,211 +37,125 @@ else{
 
 ### Outcome
 
-Before I can implement any new modes, I will first need to create a p5.js DOM dropdown to allow the user to select different modes. I will also create a slider to allow the user to change the amount of time a generation takes (with text that tells the user the amount of seconds). I also added variables to the changeScene() function to allow the options to be passed onwards into evolution\_Scene.js
-
-<pre class="language-javascript"><code class="lang-javascript">//creature_Creator.js
-
-this.mySetup = function () {
-    genTimeSlider = createSlider(5, 20, 10, 1);
-    genTimeSlider.center('horizontal');
-    genTimeSlider.position(genTimeSlider.position().x + 200, genTimeSlider.position().y);
-    
-    sel = createSelect();
-    sel.center('horizontal');
-    sel.position(sel.position().x - 200, sel.position().y);
-    sel.option('Move to right');
-    sel.option('Obstacles');
-    sel.option('Jump');
-    sel.changed(selectionEvent);
-}
-
-<strong>this.myDraw = function () {
-</strong>    genTimeSlider.center('horizontal');
-    genTimeSlider.position(genTimeSlider.position().x + 200, genTimeSlider.position().y);
-    
-    sel.center('horizontal');
-    sel.position(sel.position().x - 200, sel.position().y);
-}
-
-function selectionEvent() {
-    if (sel.value() == 'Move to right'){
-        optionsIndex = 0;
-    }
-    else if (sel.value() == 'Obstacles'){
-        optionsIndex = 1;
-    }
-    else if (sel.value() == 'Jump'){
-        optionsIndex = 2;
-    }
-
-    let item = sel.value();
-    background(200);
-    text('It is a ' + item + '!', 50, 50);
-}</code></pre>
-
-Adding obstacles was rather easy, as similarly to the striped background I just needed to have a repeating loop adding in rectangles with collision at an interval.
-
-<pre class="language-javascript"><code class="lang-javascript">//evolution_Scene.js
-
-var obstacleContainer = [];
-
-this.mySetup = function () {
-<strong>  if (optionsIndex == 1){
-</strong>    for (let i = 0; i &#x3C; 5; i++){
-      var obstacle = new MyRect(900 + (500 * i), 1100, 100, 800, { isStatic: true }, world);
-      obstacleContainer.push(obstacle);
-    }
-  }
-
-}</code></pre>
-
-Implementing the jump mode was more challenging due to needing to define and check for a new objective. This mode also caused a few new problems to pop up and need fixing, but the solution bettered the other modes as well.\
+To start the implementation, I found a function that sorts an array by one element and made it sort in a descending order. I decided that I would create a new array which had the creature ID and average x or peak y, based on which one is needed. I did this to avoid potentially breaking something else with the code alongside not having to directly shuffle quite large objects around each frame. The proxy ID would keep track of the creature it was holding the place of and the comparison value would hold the average x or peak y and would be used to order the array, with the place in the array being the place on the leader board.\
 \
-Firstly, to implement this I needed each creature to know its own best y position among its joints, similar to tracking their average x. While implementing this and finding unusual errors, I discovered that the y coordinates were inverted. When I compensated for such, I managed to get the function working.
+Each frame the proxy array would be updated with the new values and sorted to have the correct leader board for that frame.
 
+{% tabs %}
+{% tab title="evolution_Scene.js" %}
 ```javascript
-//calculate best y
-let tempY = 0;
-let bestY = 9999;
-for (let i = 0; i < McreatureComposite.bodies.length; i++) {
-  tempY = McreatureComposite.bodies[i].position.y;
-
-  if (bestY > tempY){
-    bestY = McreatureComposite.bodies[i].position.y;
+this.mySetup = function(){
+    //...//
+  for (let i = 0; i < creatureNum; i++) { //32 differnt collision layers is max due to bitmask, so thats 32 different creature limit
+    creatureContainer.push(new MyCreature(i, creatureCompositeIn, 2 ** i))
+    creatureContainer[i].creatureSetup();
+    Composite.add(world, creatureContainer[i].McreatureComposite);
+  
+    proxyCreatureContainer.push(new MyCreatureProxy(i))//index is the same as the ID
   }
+    //...//
 }
 
-this.bestY = bestY;
-```
+this.myDraw = function(){
+    //...//
+  if (optionsIndex != 2){
+    for (let i = 0; i < creatureNum; i++) { //for average x
+      proxyCreatureContainer[i].comparisonValue = creatureContainer[proxyCreatureContainer[i].proxyID].averageX;
+    }
+  }
+  else{
+    for (let i = 0; i < creatureNum; i++) { //for peak y
+      proxyCreatureContainer[i].comparisonValue = creatureContainer[proxyCreatureContainer[i].proxyID].bestY;
+    }
+  }
 
-Now to track the best y and select it for evolution as well as displaying correct graphics, I needed to make altered versions of functions and logic for the code to use when jump mode is selected. Altered versions of "camera" movement was also needed to accommodate the y axis movement.
+  proxyCreatureContainer.sort((a, b) => { //ordering the list
+    if (optionsIndex != 2){
+      return b.comparisonValue - a.comparisonValue;
+    }
+    else{
+      return a.comparisonValue - b.comparisonValue;
+      //this is reverse because y coords are inverted in the canvas.
+    }
+  });
+    //...//
+}
+```
+{% endtab %}
+
+{% tab title="function_Bank.js" %}
+```javascript
+function MyCreatureProxy(proxyID, comparisonValue = 0) {
+  this.proxyID = proxyID
+  this.comparisonValue = comparisonValue
+}
+```
+{% endtab %}
+{% endtabs %}
+
+This now being functional means that Cycle 10's and 13's functions for finding the best creature are obsolete and are replaced with this new sorted array, as it holds all the positions.
+
+To make the selected creature cycle through the leader board, I changed how it selects by taking the place in the proxy array, getting the ID and using that ID (which correlates to the position of the selected creature in the container array) to render that creature differently. This logic of getting the ID from the proxy list based on the creatures place is now used everywhere else that used to use the bestX or bestY variables.
 
 ```javascript
+fill(0, 0, 225, 225) //selected
+creatureContainer[proxyCreatureContainer[creatureSelectedPlace].proxyID].show()
+creatureContainer[proxyCreatureContainer[creatureSelectedPlace].proxyID].think(currentTimeScale);
+```
+
+Finally, implementing a visual leader board for the user to gawk at. When implementing this, I decided that there wasn't enough space on the canvas for a large amount of text, so using the p5.js functions with html DOM, I created the list outside the right side of the canvas. Due to having to centre the element, the text was also aligned to the centre, so I found a function that would pad zeros before the numbers to keep the text inline.
+
+```javascript
+let leaderboard = []; //using an array for easy access later on
+
+this.mySetup = function () {
+  for (let i = 0; i < creatureNum; i++){ //base setup for the text
+    leaderboard.push(createElement('h5', (i + 1) + "text"))
+    leaderboard[i].style('color', '#000000');
+    leaderboard[i].center('vertical')
+    leaderboard[i].center('horizontal')
+    leaderboard[i].position(leaderboard[i].position().x + 510, leaderboard[i].position().y - (390 - 20 * i))
+  }
+    //...//
+}
+
 this.myDraw = function () {
-//...//
-  else if(optionsIndex == 2){ //getting bestY of all creatures
-    for (let i = 0; i < creatureContainer.length; i++) {
-      let tempY = creatureContainer[i].bestY;
-      if (tempY < bestY) {
-        bestY = tempY;
-        firstBestID = creatureContainer[i].McreatureID;
-      }
-      bestX = creatureContainer[firstBestID].averageX;
+    //...//
+  for (let i = 0; i < creatureNum; i++){
+    if(optionsIndex != 2){
+      leaderboard[i].elt.firstChild.data = (padLeadingZeros(i + 1, 2) + ", Creature: " + padLeadingZeros((proxyCreatureContainer[i].proxyID + 1), 2) + ", At: "  + padLeadingZeros(parseInt(creatureContainer[proxyCreatureContainer[i].proxyID].averageX - startingPos), 4))
     }
+    else{
+      leaderboard[i].elt.firstChild.data = (padLeadingZeros(i + 1, 2) + ", Creature: " + padLeadingZeros((proxyCreatureContainer[i].proxyID + 1), 2) + ", At: "  + padLeadingZeros(parseInt((proxyCreatureContainer[i].comparisonValue * -1) + 800), 4))
+    }
+    leaderboard[i].center('vertical')
+    leaderboard[i].center('horizontal')
+    leaderboard[i].position(leaderboard[i].position().x + 510, leaderboard[i].position().y - (390 - 20 * i))
   }
-  
-  const zoom = 0.6;
-  const shiftX = -bestX * zoom + width / 2;
-  const shiftY = -bestY * zoom + width / 2; //y axis camera movement
-  
-  if(optionsIndex != 2){
-    translate(shiftX, 0)
-  }
-  else{
-    translate(shiftX, shiftY + 100)
-  }
-//...//
+    //...//
 }
 
-function nextGen() {
-  if(optionsIndex != 2){
-    findBestX();
-  }
-  else{
-    findBestY();
-  }
-//...//
-}
-
-function findBestY() {
-    let bestY = 0;
-    let tempArray = [];
-    for (let i = 0; i < creatureContainer.length; i++) {
-      tempArray.push(creatureContainer[i].averageX);
-    }
-
-    for (let i = 0; i < tempArray.length; i++) {
-      let temp = tempArray[i]
-      if (temp > bestY) {
-        bestY = temp;
-        firstBestID = i;
-      }
-    }
-    bestCreaturesFromLastGen.push(creatureContainer[firstBestID].brain)
-
-    tempArray.splice(firstBestID, 1, 0);
-    bestY = 0;
-    for (let i = 0; i < tempArray.length; i++) {
-      let temp = tempArray[i]
-      //console.log(temp);
-      if (temp > bestY) {
-        bestY = temp;
-        secondBestID = i;
-      }
-    }
-    bestCreaturesFromLastGen.push(creatureContainer[secondBestID].brain)
-  }
-}
-```
-
-Finally, I found that the creatures would find it hard to evolve because their highest points would be from when they initially spawned, causing absolutely no positive reinforcement. To fix this, I created a function that would lower all the joints of a creature so that the lowest was on the ground.  I call this function only once, just before the creatureComposite is passed into evolution\_Scene.js.
-
-```javascript
-function placeOnGround(compositeIn){
-  //find lowest Y, lower all to ground
-  let tempY = 0;
-  let lowestY = -9999;
-  let arrayPos = -1;
-  for (let i = 0; i < compositeIn.bodies.length; i++) {
-    tempY = compositeIn.bodies[i].position.y;
-    if (tempY > lowestY){
-      lowestY = tempY;
-      arrayPos = i;
-    }
-  }
-
-  let lowerAmount = 800 - lowestY;
-
-  for (let i = 0; i < compositeIn.bodies.length; i++) {
-    compositeIn.bodies[i].position.y += lowerAmount;
-  }
-
-  return compositeIn; //returned after being dropped to 0
-}
-```
-
-During this process, I also created a line that would show the player the best height reached for more visual clarity.
-
-```javascript
-if(optionsIndex == 2) {
-  translate(-shiftX, 0)
-  strokeWeight(5);
-  stroke(0, 100, 0, 225)
-  line(-999, bestY, 5000, bestY)
-  strokeWeight(1);
-  stroke(0, 0, 0, 225)
+function padLeadingZeros(num, size) {
+  var s = num+"";
+  while (s.length < size) s = "0" + s;
+  return s;
 }
 ```
 
 ### Challenges
 
-The main challenge of this cycle was implementing the jump mode, as it required unique solutions to its problems.
+The main challenge with this cycle was making sure I dint break anything whilst implementing the new system for tracking the creatures places. For example, after I got the array working with the rest of the code, I noticed that the creatures stopped improving at all, which was due to passing the whole proxy array into the mutate() function instead of the ID from the array. Going through and fixing these invisible bugs without breaking something else posed a bit of a challenge.
 
 ## Testing
 
 ### Tests
 
-| Test | Instructions                              | What I expect                                                                                                               | What actually happens | Pass/Fail |
-| ---- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------- |
-| 1    | Interact with the slider DOM element.     | The slider to change the amount of time in the text and the amount of time in the next generation.                          | As expected.          | Pass.     |
-| 2    | Change the mode to obstacles.             | Obstacles are present in after pressing done.                                                                               | As expected.          | Pass.     |
-| 3    | Change the mode to jump.                  | The goal is changed to getting y height, the camera moves on the y axis and there is a line showing the max height reached. | As expected.          | Pass.     |
-| 4    | Create a creature high up and press done. | The creature to be lowered to the ground.                                                                                   | As expected.          | Pass.     |
+| Test | Instructions                                                                  | What I expect                                                        | What actually happens                                                             | Pass/Fail                                    |
+| ---- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------- |
+| 1    | Observe the leader board and compare it to the best x on the canvas.          | The top of the leader board and best x on the canvas to be the same. | As expected.                                                                      | Pass.                                        |
+| 2    | Cycle through the creatures and check the order compared to the leader board. | The selection to move down the places in the leader board.           | As expected.                                                                      | Pass.                                        |
+| 3    | Resize the page to check the leader board texts position                      | The text to stay anchored to the right of the canvas.                | As expected, but the text line breaks with a small window and becomes unreadable. | <p>Pass. <br>(with<br>a bit <br>of fail)</p> |
+| 4    |                                                                               |                                                                      | As expected.                                                                      | Pass.                                        |
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (3) (4).png" alt=""><figcaption><p>DOM elements working</p></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (2) (5).png" alt=""><figcaption><p>Jump mode</p></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (2) (1) (3).png" alt=""><figcaption><p>Obstacle mode</p></figcaption></figure>

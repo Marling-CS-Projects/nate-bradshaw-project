@@ -31,7 +31,7 @@
 * [2.2.13 Cycle 13 - Alternative Objectives](design-and-development/cycle-1-12.md)
 * [2.2.14 Cycle 14 - Webpage improvements and hosting.](design-and-development/cycle-1-13.md)
 * [2.2.15 Cycle 15 - User Interaction](design-and-development/cycle-1-14.md)
-* [2.2.16 Cycle 16 - Code Clean-up](design-and-development/cycle-1-15.md)
+* [2.2.16 Cycle 16 - Leader board](design-and-development/cycle-1-15.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>
 
