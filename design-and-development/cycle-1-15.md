@@ -2,10 +2,7 @@
 
 ## Overview
 
-redid best x / peak y code to have an array of all\
-added a leader board\
-blue select done in place order\
-reintroduced keeping of best creature from last gen to stop devolution
+In this final cycle I will add a leader board to allow the user to see the position of all the creatures at once and change the blue select to show the creatures in this order.
 
 ## Design
 
@@ -150,12 +147,14 @@ The main challenge with this cycle was making sure I dint break anything whilst 
 
 ### Tests
 
-| Test | Instructions                                                                  | What I expect                                                        | What actually happens                                                             | Pass/Fail                                    |
-| ---- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------- |
-| 1    | Observe the leader board and compare it to the best x on the canvas.          | The top of the leader board and best x on the canvas to be the same. | As expected.                                                                      | Pass.                                        |
-| 2    | Cycle through the creatures and check the order compared to the leader board. | The selection to move down the places in the leader board.           | As expected.                                                                      | Pass.                                        |
-| 3    | Resize the page to check the leader board texts position                      | The text to stay anchored to the right of the canvas.                | As expected, but the text line breaks with a small window and becomes unreadable. | <p>Pass. <br>(with<br>a bit <br>of fail)</p> |
-| 4    |                                                                               |                                                                      | As expected.                                                                      | Pass.                                        |
+| Test | Instructions                                                                  | What I expect                                                        | What actually happens                                                                                | Pass/Fail |
+| ---- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | --------- |
+| 1    | Observe the leader board and compare it to the best x on the canvas.          | The top of the leader board and best x on the canvas to be the same. | As expected.                                                                                         | Pass.     |
+| 2    | Cycle through the creatures and check the order compared to the leader board. | The selection to move down the places in the leader board.           | As expected.                                                                                         | Pass.     |
+| 3    | Resize the page to check the leader board texts position                      | The text to stay anchored to the right of the canvas.                | As expected, but the text line breaks with a small window and becomes unreadable (a very edge case). | Pass.     |
 
 ### Evidence
 
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Leader board working, showing each creatures place and average X in descending order.</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Peak Y leader board working alongside separate peak Y line for selected creature.</p></figcaption></figure>

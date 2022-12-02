@@ -17,6 +17,16 @@ Within this cycle I want to focus on user interaction within the simulation by i
 * [x] Make neural network muscle movement speed match the time control
 * [x] Make the timer slow down / speed up to match the time control
 
+### Usability Features
+
+| Variable Name          | Use                                                                                      |
+| ---------------------- | ---------------------------------------------------------------------------------------- |
+| creatureSelectedID     | The current creature that the user is viewing, used to render that creature differently. |
+| nextCreatureButton     | The button that allows the user to cycle forward through the creatures.                  |
+| previousCreatureButton | The button that allows the user to cycle backward through the creatures.                 |
+| currentTimeScale       | The current time scaling for the simulation.                                             |
+| timeScaleSlider        | The slider that allows the user to change the time scale of the simulation.              |
+
 ### Pseudocode
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>let selectedCreature = 0;
@@ -34,7 +44,8 @@ end if
     
 //after the main draw for all the other creatures
 drawCol = blue;
-creatureContainer[selectedCreature].draw();</code></pre>
+creatureContainer[selectedCreature].draw();
+</code></pre>
 
 ```javascript
 let slider = createSlider(1, 5); //1x speed to 5x speed
@@ -63,14 +74,14 @@ This task was relatively easy due to the creature object already having ID's fro
   
   nextCreatureButton.center('horizontal');
   nextCreatureButton.position(nextCreatureButton.position().x,
-    nextCreatureButton.position().y + 20);
+  nextCreatureButton.position().y + 20);
   
   previousCreatureButton = createButton('View Previous Creature');
   previousCreatureButton.mousePressed(previousCreatureButtonDown);
   
   previousCreatureButton.center('horizontal');
   previousCreatureButton.position(previousCreatureButton.position().x,
-    previousCreatureButton.position().y + 50);
+  previousCreatureButton.position().y + 50);
     //...//
 }
 
@@ -97,7 +108,8 @@ function nextCreatureButtonDown() {
   else{
     creatureSelectedID++;
   }
-}</code></pre>
+}
+</code></pre>
 
 <figure><img src="../.gitbook/assets/image (6) (4).png" alt=""><figcaption><p>The buttons cycle through and the creature in blue is the one selected.</p></figcaption></figure>
 
@@ -245,8 +257,8 @@ Due to test 4's fail, I made the time scale only update at the start of a genera
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>1.3x time scale working with a 1st and separate selected creature</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption><p>1.3x time scale working with a 1st and separate selected creature</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>No issues with 1st and selected being the same.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>0.1x time scale working and alternative text for "jump".</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (5).png" alt=""><figcaption><p>0.1x time scale working and alternative text for "jump".</p></figcaption></figure>
