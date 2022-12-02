@@ -95,7 +95,7 @@ Due to the simplicity and small scale of this cycle, there wasn't much difficult
 
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>index.html</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>game_page.html</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (4).png" alt=""><figcaption><p>game_page.html</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Favicon</p></figcaption></figure>
 

@@ -231,7 +231,7 @@ this.think = function (timeScale = 1) {
 
 After this, I then added some more text to the canvas to give the user feedback on the time left in the generation and the timescale they were using.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>The timer counts down faster / slower proportional to the timescale.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (4).png" alt=""><figcaption><p>The timer counts down faster / slower proportional to the timescale.</p></figcaption></figure>
 
 ```javascript
 text(("Time: " + (timeCount).toFixed(1)), 0, 132)
@@ -257,8 +257,8 @@ Due to test 4's fail, I made the time scale only update at the start of a genera
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption><p>1.3x time scale working with a 1st and separate selected creature</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>1.3x time scale working with a 1st and separate selected creature</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>No issues with 1st and selected being the same.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (7).png" alt=""><figcaption><p>No issues with 1st and selected being the same.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3) (5).png" alt=""><figcaption><p>0.1x time scale working and alternative text for "jump".</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>0.1x time scale working and alternative text for "jump".</p></figcaption></figure>
