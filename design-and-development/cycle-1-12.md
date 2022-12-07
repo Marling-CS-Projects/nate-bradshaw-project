@@ -15,8 +15,6 @@ Now I'm happy with the creatures, I now will focus on creating a couple of alter
 
 ### Usability Features
 
-
-
 | Variable Name     | Use                                                                |
 | ----------------- | ------------------------------------------------------------------ |
 | obstacleContainer | contains all the obstacle objects.                                 |
@@ -89,7 +87,8 @@ function selectionEvent() {
     let item = sel.value();
     background(200);
     text('It is a ' + item + '!', 50, 50);
-}</code></pre>
+}
+</code></pre>
 
 Adding obstacles was rather easy, as similarly to the striped background I just needed to have a repeating loop adding in rectangles with collision at an interval.
 
@@ -105,7 +104,8 @@ this.mySetup = function () {
     }
   }
 
-}</code></pre>
+}
+</code></pre>
 
 Implementing the jump mode was more challenging due to needing to define and check for a new objective. This mode also caused a few new problems to pop up and need fixing, but the solution bettered the other modes as well.\
 \
@@ -252,7 +252,7 @@ The main challenge of this cycle was implementing the jump mode, as it required 
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (3) (4).png" alt=""><figcaption><p>DOM elements working</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (5).png" alt=""><figcaption><p>DOM elements working</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (2) (5).png" alt=""><figcaption><p>Jump mode</p></figcaption></figure>
 

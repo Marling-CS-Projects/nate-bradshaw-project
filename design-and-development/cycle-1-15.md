@@ -155,6 +155,6 @@ The main challenge with this cycle was making sure I dint break anything whilst 
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Leader board working, showing each creatures place and average X in descending order.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Leader board working, showing each creatures place and average X in descending order.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Peak Y leader board working alongside separate peak Y line for selected creature.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Peak Y leader board working alongside separate peak Y line for selected creature.</p></figcaption></figure>
