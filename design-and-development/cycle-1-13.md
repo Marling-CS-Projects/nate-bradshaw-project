@@ -97,6 +97,6 @@ Due to the simplicity and small scale of this cycle, there wasn't much difficult
 
 <figure><img src="../.gitbook/assets/image (4) (4).png" alt=""><figcaption><p>game_page.html</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Favicon</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2) (2).png" alt=""><figcaption><p>Favicon</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (5) (3).png" alt=""><figcaption><p>Website hosted on GitHub Pages</p></figcaption></figure>
