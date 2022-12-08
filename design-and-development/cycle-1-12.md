@@ -12,15 +12,18 @@ Now I'm happy with the creatures, I now will focus on creating a couple of alter
 * [x] Add a jump (y axis height) mode.
 * [x] Add a dropdown menu to chose between modes.
 * [x] Add a generation time slider.
+* [x] Add some warn text for when a creature doesn't have enough joints / muscles
 
 ### Usability Features
 
-| Variable Name     | Use                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| obstacleContainer | contains all the obstacle objects.                                 |
-| findBestY()       | Duplicate of the findBestX() function but reworked to find best Y. |
-| bestY             | The highest y coordinate from all of a creatures joints.           |
-| placeOnGround()   | A function to place a creature on the ground.                      |
+| Variable Name     | Use                                                                                  |
+| ----------------- | ------------------------------------------------------------------------------------ |
+| obstacleContainer | contains all the obstacle objects.                                                   |
+| findBestY()       | Duplicate of the findBestX() function but reworked to find best Y.                   |
+| bestY             | The highest y coordinate from all of a creatures joints.                             |
+| placeOnGround()   | A function to place a creature on the ground.                                        |
+| genTimeSlider     | The slider that the user can adjust to change the length of the generations.         |
+| warnText          | The text that tells the user that the creature doesn't have enough joints / muscles. |
 
 ### Pseudocode
 
@@ -35,11 +38,16 @@ if (mode == obstacles){
     }
 }
 
-if(mode == jump){
-  findBestY();
+if(muscles >= minMuscles && joints >= minJoints){
+    if(mode == jump){
+      findBestY(generationTime);
+    }
+    else{
+      findBestX(generationTime);
+    }
 }
 else{
-  findBestX();
+    warnText = true
 }
 ```
 
@@ -47,14 +55,25 @@ else{
 
 ### Outcome
 
-Before I can implement any new modes, I will first need to create a p5.js DOM dropdown to allow the user to select different modes. I will also create a slider to allow the user to change the amount of time a generation takes (with text that tells the user the amount of seconds). I also added variables to the changeScene() function to allow the options to be passed onwards into evolution\_Scene.js
+Before I can implement any new modes, I will first need to create a p5.js DOM dropdown to allow the user to select different modes. I will also create a slider to allow the user to change the amount of time a generation takes (with text that tells the user the amount of seconds). I also added variables to the changeScene() function to allow the options to be passed onwards into evolution\_Scene.js. I also followed up on a feature from Cycle 7 where I didn't allow the player to progress to the evolution with a very low amount of joints and muscles. This needs to be more visualy clear, so this text with tell the user why the scene isn't changing.
 
 <pre class="language-javascript"><code class="lang-javascript">//creature_Creator.js
+let warnText;
+let sel;
+
+let genTimeSlider;
+
+let optionsIndex;
 
 this.mySetup = function () {
+        //...//
     genTimeSlider = createSlider(5, 20, 10, 1);
     genTimeSlider.center('horizontal');
     genTimeSlider.position(genTimeSlider.position().x + 200, genTimeSlider.position().y);
+
+    warnText = createElement('h5', " "); //setting up position
+    warnText.center('vertical');
+    warnText.center('horizontal');
     
     sel = createSelect();
     sel.center('horizontal');
@@ -62,11 +81,16 @@ this.mySetup = function () {
     sel.option('Move to right');
     sel.option('Obstacles');
     sel.option('Jump');
-    sel.changed(selectionEvent);
+    sel.changed(selectionEvent);#
+        //...//
 }
 
 <strong>this.myDraw = function () {
-</strong>    genTimeSlider.center('horizontal');
+</strong><strong>        //...//
+</strong><strong>    warnText.center('vertical');
+</strong>    warnText.center('horizontal');
+        
+    genTimeSlider.center('horizontal');
     genTimeSlider.position(genTimeSlider.position().x + 200, genTimeSlider.position().y);
     
     sel.center('horizontal');
@@ -88,6 +112,20 @@ function selectionEvent() {
     background(200);
     text('It is a ' + item + '!', 50, 50);
 }
+
+function doneButtonDown() {
+    if (creatureComposite.bodies.length &#x3C;= 3 || creatureComposite.constraints.length &#x3C;= 3) {
+        warnText.elt.firstChild.data = "Please add more joints / muscles"
+        warnText.style('color', '#fc0303');
+        warnText.center('vertical')
+        warnText.center('horizontal')
+        return;
+            //...//
+    }
+}
+
+//put in each button and clicking in canvas to clear the message
+warnText.elt.firstChild.data = " "
 </code></pre>
 
 Adding obstacles was rather easy, as similarly to the striped background I just needed to have a repeating loop adding in rectangles with collision at an interval.
