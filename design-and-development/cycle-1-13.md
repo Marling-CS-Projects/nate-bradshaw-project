@@ -67,7 +67,7 @@ The webpage template I am already using has a space for text, so all I had to do
 
 For a final touch to the webpage, I decided to add a favicon. To do this I once again used photoshop and created a representation of a creature within a circle and added the link to the html.
 
-<figure><img src="../.gitbook/assets/Icon (1).png" alt=""><figcaption><p>Icon.png</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Icon.png" alt=""><figcaption><p>Icon.png</p></figcaption></figure>
 
 ```html
 <!-- inside <head> on in both html files -->

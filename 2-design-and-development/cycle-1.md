@@ -107,9 +107,9 @@ Getting the constraints to delete posed a challenge initially, but after I found
 
 ### Evidence
 
-![Game Webpage](<../.gitbook/assets/image (1) (2) (1).png>)
+![Game Webpage](<../.gitbook/assets/image (4) (1) (1) (1).png>)
 
-![Phaser example scene](<../.gitbook/assets/image (7) (1) (1).png>)
+![Phaser example scene](<../.gitbook/assets/image (6) (1) (1).png>)
 
 ![Initial constraint between two objects](<../.gitbook/assets/image (3) (1) (2).png>)
 

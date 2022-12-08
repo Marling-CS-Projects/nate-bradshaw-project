@@ -281,14 +281,17 @@ The main challenge of this cycle was implementing the jump mode, as it required 
 
 ### Tests
 
-| Test | Instructions                              | What I expect                                                                                                               | What actually happens | Pass/Fail |
-| ---- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------- |
-| 1    | Interact with the slider DOM element.     | The slider to change the amount of time in the text and the amount of time in the next generation.                          | As expected.          | Pass.     |
-| 2    | Change the mode to obstacles.             | Obstacles are present in after pressing done.                                                                               | As expected.          | Pass.     |
-| 3    | Change the mode to jump.                  | The goal is changed to getting y height, the camera moves on the y axis and there is a line showing the max height reached. | As expected.          | Pass.     |
-| 4    | Create a creature high up and press done. | The creature to be lowered to the ground.                                                                                   | As expected.          | Pass.     |
+| Test | Instructions                                  | What I expect                                                                                                               | What actually happens | Pass/Fail |
+| ---- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------- |
+| 1    | Interact with the slider DOM element.         | The slider to change the amount of time in the text and the amount of time in the next generation.                          | As expected.          | Pass.     |
+| 2    | Change the mode to obstacles.                 | Obstacles are present in after pressing done.                                                                               | As expected.          | Pass.     |
+| 3    | Change the mode to jump.                      | The goal is changed to getting y height, the camera moves on the y axis and there is a line showing the max height reached. | As expected.          | Pass.     |
+| 4    | Create a creature high up and press done.     | The creature to be lowered to the ground.                                                                                   | As expected.          | Pass.     |
+| 5    | Create an unsuitable creature and press done. | Warning text to show and scene doesn't change.                                                                              | As expected.          | Pass.     |
 
 ### Evidence
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Warn text.</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (5) (5).png" alt=""><figcaption><p>DOM elements working</p></figcaption></figure>
 

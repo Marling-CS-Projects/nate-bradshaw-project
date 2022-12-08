@@ -43,7 +43,7 @@ The systems that I will need to design will be the agents and UI input handling.
 
 #### Aims
 
-* The game doesn't crash
+* The simulation doesn't crash
 * Try to remove as many bugs as I can
 
 ### Easy To Learn
