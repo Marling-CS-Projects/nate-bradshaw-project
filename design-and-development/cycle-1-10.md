@@ -168,7 +168,7 @@ The challenge of fixing memory leak was finding it in the first place, as I star
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>Initial memory leak</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (1).png" alt=""><figcaption><p>Initial memory leak</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>Memory leak after removing matter.js bodies</p></figcaption></figure>
 
