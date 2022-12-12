@@ -291,7 +291,7 @@ The main challenge of this cycle was implementing the jump mode, as it required 
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Warn text.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (3).png" alt=""><figcaption><p>Warn text.</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (5) (5).png" alt=""><figcaption><p>DOM elements working</p></figcaption></figure>
 
