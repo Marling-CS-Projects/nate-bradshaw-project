@@ -259,6 +259,6 @@ Due to test 4's fail, I made the time scale only update at the start of a genera
 
 <figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>1.3x time scale working with a 1st and separate selected creature</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (7).png" alt=""><figcaption><p>No issues with 1st and selected being the same.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (7) (1).png" alt=""><figcaption><p>No issues with 1st and selected being the same.</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (3) (1) (4).png" alt=""><figcaption><p>0.1x time scale working and alternative text for "jump".</p></figcaption></figure>

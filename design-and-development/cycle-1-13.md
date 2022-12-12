@@ -93,7 +93,7 @@ Due to the simplicity and small scale of this cycle, there wasn't much difficult
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>index.html</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>index.html</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (4) (4).png" alt=""><figcaption><p>game_page.html</p></figcaption></figure>
 
