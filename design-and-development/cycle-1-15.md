@@ -157,4 +157,4 @@ The main challenge with this cycle was making sure I dint break anything whilst 
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Leader board working, showing each creatures place and average X in descending order.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Peak Y leader board working alongside separate peak Y line for selected creature.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (3).png" alt=""><figcaption><p>Peak Y leader board working alongside separate peak Y line for selected creature.</p></figcaption></figure>

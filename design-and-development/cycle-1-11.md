@@ -15,8 +15,6 @@ In this cycle I will refine the creatures to create a more interesting evolution
 
 ### Usability Features
 
-
-
 | Variable Name  | Use                                                                                                                                               |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | stiffness      | The stiffness value for a constraint passed into the MyConstraint function.                                                                       |
@@ -105,7 +103,8 @@ for(let i = 0; i &#x3C; outputs.length; i++){ //for each constraint, so that mul
   else if (outputs [i] > 0.55 &#x26;&#x26; McreatureComposite.constraints[i].length &#x3C;= compositeIn.constraints[i].length + 200) {
     McreatureComposite.constraints[i].length += 5 * (0.5 - (outputs[i] - 0.5));
   }
-}</code></pre>
+}
+</code></pre>
 
 ### Challenges
 
@@ -121,4 +120,4 @@ The main challenge with this cycle was fine tuning the stiffness of the constrai
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Demonstration of better average x without best peak x</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (4).png" alt=""><figcaption><p>Demonstration of better average x without best peak x</p></figcaption></figure>

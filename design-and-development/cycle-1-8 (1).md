@@ -170,6 +170,6 @@ The biggest challenge was finding relevant information for a non WEBGL camera fo
 
 <figure><img src="../.gitbook/assets/image (6) (3).png" alt=""><figcaption><p>A  line drawn between a node and the mouse</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (17) (1).png" alt=""><figcaption><p>A node after being clicked twice with a muscle</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17) (1) (1).png" alt=""><figcaption><p>A node after being clicked twice with a muscle</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption><p>The creatures muscles being restricted (this is how far they grew / shrunk) The camera also followed the furthest right creature</p></figcaption></figure>
