@@ -28,7 +28,7 @@ For this cycle I will improve the website surrounding the project to add instruc
 
 To make the instructions for the webpage, I decided that a visually labelling a screenshot of the creature creator controls would be the best way to show the user how to use them. To do this, I used photoshop and added small descriptions to each button, dropdown and slider.&#x20;
 
-<figure><img src="../.gitbook/assets/Guide.png" alt=""><figcaption><p>Guide.png</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Guide (1).png" alt=""><figcaption><p>Guide.png</p></figcaption></figure>
 
 For the text, I further explained the buttons and gave some advice to the user on how to create a more successful creature.
 
@@ -67,7 +67,7 @@ The webpage template I am already using has a space for text, so all I had to do
 
 For a final touch to the webpage, I decided to add a favicon. To do this I once again used photoshop and created a representation of a creature within a circle and added the link to the html.
 
-<figure><img src="../.gitbook/assets/Icon.png" alt=""><figcaption><p>Icon.png</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Icon (2).png" alt=""><figcaption><p>Icon.png</p></figcaption></figure>
 
 ```html
 <!-- inside <head> on in both html files -->
