@@ -47,5 +47,13 @@
 
 ## Code
 
-* [Page 1](code/page-1.md)
-* [Page 2](code/page-2.md)
+* [index.html](code/index.html.md)
+* [game\_page.html](code/game\_page.html.md)
+* [style.css](code/style.css.md)
+* [server.py](code/server.py.md)
+* [functions\_Bank.js](code/functions\_bank.js.md)
+* [scene\_Manager.js](code/page-2.md)
+* [creature\_Creator.js](code/creature\_creator.js.md)
+* [evolution\_Scene.js](code/evolution\_scene.js.md)
+* [Guide.png](code/guide.png.md)
+* [Icon.png](code/page-1.md)
