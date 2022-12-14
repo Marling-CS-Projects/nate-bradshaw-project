@@ -2,7 +2,7 @@
 description: Computer Science H446-03
 ---
 
-# Neural Evolution Sim - https://forms.gle/CMpTuAm5ij6Uhzam9
+# Neural Evolution Sim
 
 |                  |                    |
 | ---------------- | ------------------ |
@@ -17,4 +17,4 @@ Project link: [https://marling-cs-projects.github.io/Nate-Bradshaw-A-Level-Proje
 
 Note to Assessor: This project has been created with interactive elements. In order to view as intended by the students, please follow the secure link below.
 
-(secure link)
+[https://marling-school.gitbook.io/nate-bradshaw-project/jUdq9ICaHYLmQPQqXqQ4/](https://marling-school.gitbook.io/nate-bradshaw-project/jUdq9ICaHYLmQPQqXqQ4/)
